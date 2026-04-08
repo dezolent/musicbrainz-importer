@@ -5,53 +5,331 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MusicBrainz Seeding Dashboard</title>
   <style>
-    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 24px; color: #111827; background: #f8fafc; }
-    h1, h2 { margin: 0 0 8px; }
-    .top { background: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-radius: 14px; margin-bottom: 24px; }
-    .note { color: #374151; line-height: 1.55; }
-    .release-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; margin-bottom: 22px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-    .release-head { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
-    .meta { display: flex; gap: 12px; flex-wrap: wrap; color: #374151; margin-top: 8px; }
-    .seed-form button { border: 0; background: #111827; color: white; padding: 12px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; }
-    .seed-form button:hover { opacity: .92; }
-    .lookup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin: 16px 0; }
-    .hit { display: block; padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb; background: #f9fafb; }
-    .hit.ok { background: #ecfdf5; border-color: #a7f3d0; }
-    .hit.warn { background: #fffbeb; border-color: #fde68a; }
-    a { color: #1d4ed8; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    details { margin: 14px 0; }
-    pre { white-space: pre-wrap; word-break: break-word; background: #0f172a; color: #e5e7eb; padding: 14px; border-radius: 10px; overflow: auto; }
-    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
-    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-top: 1px solid #e5e7eb; }
-    th { background: #f8fafc; }
-    code { background: #eef2ff; padding: 2px 6px; border-radius: 6px; }
-  </style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --bg:        #0d0f17;
+      --surface:   #13161f;
+      --surface2:  #1a1d2b;
+      --border:    #252836;
+      --border2:   #2e3147;
+      --text:      #e2e4f0;
+      --text-muted:#8b8fa8;
+      --accent:    #7c6af7;
+      --accent2:   #a78bfa;
+      --ok-bg:     #0d2218;
+      --ok-border: #1a5c38;
+      --ok-text:   #4ade80;
+      --warn-bg:   #1f1708;
+      --warn-border:#7a5a00;
+      --warn-text: #fbbf24;
+      --link:      #818cf8;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 28px 32px;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent2) 0%, #c4b5fd 60%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .top {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 0 0 1px rgba(124,106,247,.08), 0 8px 32px rgba(0,0,0,.4);
+    }
+
+    .top-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), #c4b5fd);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .stats-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 14px 0 10px;
+    }
+
+    .stat {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 13px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent2);
+      line-height: 1.2;
+    }
+
+    .note {
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    .note strong { color: var(--text); }
+
+    .release-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.35);
+      transition: border-color .15s;
+    }
+
+    .release-card:hover { border-color: var(--border2); }
+
+    .release-head {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .meta span {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .meta span strong { color: var(--text); font-weight: 500; }
+
+    .seed-form button {
+      border: 0;
+      background: linear-gradient(135deg, #6d5af0 0%, #9f7aea 100%);
+      color: white;
+      padding: 11px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .01em;
+      box-shadow: 0 2px 12px rgba(124,106,247,.4);
+      transition: opacity .15s, box-shadow .15s;
+      white-space: nowrap;
+    }
+
+    .seed-form button:hover {
+      opacity: .9;
+      box-shadow: 0 4px 20px rgba(124,106,247,.55);
+    }
+
+    .lookup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+      margin: 0 0 16px;
+    }
+
+    .hit {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .hit.ok {
+      background: var(--ok-bg);
+      border-color: var(--ok-border);
+      color: var(--ok-text);
+    }
+
+    .hit.warn {
+      background: var(--warn-bg);
+      border-color: var(--warn-border);
+      color: var(--warn-text);
+    }
+
+    .hit small { opacity: .7; font-size: 11px; }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--accent2); }
+
+    details { margin: 14px 0 0; }
+
+    summary {
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--text-muted);
+      user-select: none;
+      padding: 6px 0;
+    }
+
+    summary:hover { color: var(--text); }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #090b12;
+      color: #a5b4fc;
+      padding: 14px 16px;
+      border-radius: 10px;
+      overflow: auto;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 13px;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 9px 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--surface2);
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    tr:hover td { background: rgba(255,255,255,.02); }
+
+    td strong { color: var(--text); font-weight: 500; }
+    td small { color: var(--text-muted); }
+
+    code {
+      background: rgba(124,106,247,.15);
+      color: var(--accent2);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    .mb-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--link);
+      background: rgba(129,140,248,.1);
+      border: 1px solid rgba(129,140,248,.25);
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+
+    .mb-link:hover { background: rgba(129,140,248,.2); text-decoration: none; }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 4px 0 16px;
+    }
+</style>
 </head>
 <body>
   <div class="top">
-    <h1>MusicBrainz Seeding Dashboard</h1>
+    <div class="top-header">
+      <div class="logo-icon">🎵</div>
+      <h1>MusicBrainz Seeding Dashboard</h1>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat"><strong>14</strong>Releases</div>
+      <div class="stat"><strong>24</strong>Tracks</div>
+      <div class="stat"><strong>13</strong>Matched</div>
+      <div class="stat"><strong>1</strong>Unmatched</div>
+    </div>
+
     <p class="note">
-      Generated from <code>songs.csv</code> on 2026-04-08 21:24:24 UTC.<br>
-      Releases: <strong>14</strong> &nbsp; Tracks: <strong>24</strong><br>
-      Country seed: <strong>XW</strong> &nbsp; Language seed: <strong>eng</strong> &nbsp; Script seed: <strong>Latn</strong>
+      Generated from <code>songs.csv</code> &mdash; 2026-04-08 22:54:35 UTC<br>
+      Country: <strong>XW</strong> &nbsp;
+      Language: <strong>eng</strong> &nbsp;
+      Script: <strong>Latn</strong>
     </p>
     <p class="note">
-      Use the <strong>Seed release editor</strong> button for each release first. That will create the release and its track list in the official MusicBrainz editor.
-      Works still need manual review/creation and relationship linking after the release/recordings exist.
+      Click <strong>Seed release editor</strong> to open the MusicBrainz release editor pre-filled with this release's data.
+      Works and relationships still require manual linking after the release is created.
     </p>
   </div>
 
   <section id="dezolent-it-s-dezolent-dez-13-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>It&#x27;s Dezolent</h2>
+          <h2>It&#x27;s Dezolent <a class="mb-link" href="https://musicbrainz.org/release/e14f83cc-08fd-4998-8c18-90cad794c855" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 2013-03-05</span>
-            <span><strong>Tracks:</strong> 5</span>
-            <span><strong>UPC:</strong> 886296197774</span>
-            <span><strong>Catalog #:</strong> DEZ-13-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 2013-03-05</span>
+            <span><strong>Tracks</strong> 5</span>
+            <span><strong>UPC</strong> 886296197774</span>
+            <span><strong>Cat#</strong> DEZ-13-0001-W</span>
+            <span><strong>Type</strong> Album</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -86,19 +364,21 @@
 <input type="hidden" name="mediums.0.track.4.number" value="5">
 <input type="hidden" name="mediums.0.track.4.name" value="Faded Memories">
 <input type="hidden" name="mediums.0.track.4.length" value="4:18">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/f2fd1209-9330-44c4-8b9a-676a0df6fd68" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/e14f83cc-08fd-4998-8c18-90cad794c855" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/f2fd1209-9330-44c4-8b9a-676a0df6fd68" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/e14f83cc-08fd-4998-8c18-90cad794c855" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -238,7 +518,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -315,13 +595,14 @@
 <section id="dezolent-fallen-star-dez-13-0002-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Fallen Star</h2>
+          <h2>Fallen Star <a class="mb-link" href="https://musicbrainz.org/release/01a18922-64a8-465b-85f7-4b8ebe364b3a" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 2013-12-05</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 085494414090</span>
-            <span><strong>Catalog #:</strong> DEZ-13-0002-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 2013-12-05</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 085494414090</span>
+            <span><strong>Cat#</strong> DEZ-13-0002-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -344,19 +625,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Fallen Star">
 <input type="hidden" name="mediums.0.track.0.length" value="3:49">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/dd7ba773-dffe-48ec-9dd5-ef058b19cead" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/01a18922-64a8-465b-85f7-4b8ebe364b3a" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/dd7ba773-dffe-48ec-9dd5-ef058b19cead" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/01a18922-64a8-465b-85f7-4b8ebe364b3a" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -448,7 +731,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -473,13 +756,14 @@
 <section id="dezolent-higher-dez-14-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Higher</h2>
+          <h2>Higher <a class="mb-link" href="https://musicbrainz.org/release/f5af82d3-25d0-4758-8292-181ff4c317b4" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 41695</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 085494582393</span>
-            <span><strong>Catalog #:</strong> DEZ-14-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 41695</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 085494582393</span>
+            <span><strong>Cat#</strong> DEZ-14-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -499,19 +783,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Higher">
 <input type="hidden" name="mediums.0.track.0.length" value="0.1625">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/a0c1166e-c055-41c0-885e-cee02548fdf6" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/f5af82d3-25d0-4758-8292-181ff4c317b4" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/a0c1166e-c055-41c0-885e-cee02548fdf6" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/f5af82d3-25d0-4758-8292-181ff4c317b4" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -591,7 +877,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -618,11 +904,12 @@
         <div>
           <h2>Gone</h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 2014-09-24</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 085494590619</span>
-            <span><strong>Catalog #:</strong> DEZ-14-0002-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 2014-09-24</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 085494590619</span>
+            <span><strong>Cat#</strong> DEZ-14-0002-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -645,19 +932,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Gone">
 <input type="hidden" name="mediums.0.track.0.length" value="4:18">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/4e5ea19c-8d60-4dc7-807b-dd301824f2d6" target="_blank" rel="noreferrer">Gone</a> <small>(score 450)</small></span>
-        <span class="hit warn">No match for release (<a href="https://musicbrainz.org/search?query=release%3A%22Gone%22+AND+artist%3A%22Dezolent%22&amp;type=release&amp;method=indexed" target="_blank" rel="noreferrer">search</a>)</span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/4e5ea19c-8d60-4dc7-807b-dd301824f2d6" target="_blank" rel="noreferrer">Gone</a> <small>(score 450)</small></span>
+        <span class="hit warn">No match for Release (<a href="https://musicbrainz.org/search?query=release%3A%22Gone%22+AND+artist%3A%22Dezolent%22&amp;type=release&amp;method=indexed" target="_blank" rel="noreferrer">search</a>)</span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -749,7 +1038,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -774,13 +1063,14 @@
 <section id="dezolent-last-seven-days-dez-18-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Last Seven Days</h2>
+          <h2>Last Seven Days <a class="mb-link" href="https://musicbrainz.org/release/7915d218-455a-45c5-bc2f-b6620261d756" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 43350</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 5054283852547</span>
-            <span><strong>Catalog #:</strong> DEZ-18-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 43350</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 5054283852547</span>
+            <span><strong>Cat#</strong> DEZ-18-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -800,19 +1090,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Last Seven Days">
 <input type="hidden" name="mediums.0.track.0.length" value="4:07">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/1a588055-ffe2-4748-a7ee-dd1636414298" target="_blank" rel="noreferrer">The EDM Collective</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/921db733-4100-46c2-aaa0-70d0eb5b6a79" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/7915d218-455a-45c5-bc2f-b6620261d756" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/1a588055-ffe2-4748-a7ee-dd1636414298" target="_blank" rel="noreferrer">The EDM Collective</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/921db733-4100-46c2-aaa0-70d0eb5b6a79" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/7915d218-455a-45c5-bc2f-b6620261d756" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -892,7 +1184,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -917,13 +1209,14 @@
 <section id="dezolent-introspection-dez-20-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Introspection</h2>
+          <h2>Introspection <a class="mb-link" href="https://musicbrainz.org/release/91e8f6fe-008d-4ca7-b41a-2d58efd9b36b" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 43850</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 5054284828282</span>
-            <span><strong>Catalog #:</strong> DEZ-20-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 43850</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 5054284828282</span>
+            <span><strong>Cat#</strong> DEZ-20-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -943,19 +1236,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Introspection (feat. Rapzor)">
 <input type="hidden" name="mediums.0.track.0.length" value="0.148611111">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/2f03a059-f023-4f13-9ba7-d5f2be0930cf" target="_blank" rel="noreferrer">Revamped Recordings</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/ad33f0f9-c857-44e6-8a59-c8d029c78f44" target="_blank" rel="noreferrer">Introspection</a> <small>(score 330)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/91e8f6fe-008d-4ca7-b41a-2d58efd9b36b" target="_blank" rel="noreferrer">Introspection</a> <small>(score 330)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/2f03a059-f023-4f13-9ba7-d5f2be0930cf" target="_blank" rel="noreferrer">Revamped Recordings</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/ad33f0f9-c857-44e6-8a59-c8d029c78f44" target="_blank" rel="noreferrer">Introspection</a> <small>(score 330)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/91e8f6fe-008d-4ca7-b41a-2d58efd9b36b" target="_blank" rel="noreferrer">Introspection</a> <small>(score 330)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -1035,7 +1330,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -1060,13 +1355,14 @@
 <section id="dezolent-sleepless-dez-2025-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Sleepless</h2>
+          <h2>Sleepless <a class="mb-link" href="https://musicbrainz.org/release/93923e9b-c080-4368-ada1-0fa6119539f3" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 44013</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 195395500959</span>
-            <span><strong>Catalog #:</strong> DEZ-2025-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 44013</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 195395500959</span>
+            <span><strong>Cat#</strong> DEZ-2025-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -1086,19 +1382,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Sleepless">
 <input type="hidden" name="mediums.0.track.0.length" value="0.155555556">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/9dc2b1dd-d448-4ff8-afc8-8308e9b4a432" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/93923e9b-c080-4368-ada1-0fa6119539f3" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/9dc2b1dd-d448-4ff8-afc8-8308e9b4a432" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/93923e9b-c080-4368-ada1-0fa6119539f3" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -1178,7 +1476,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -1203,13 +1501,14 @@
 <section id="dezolent-feelings-dez-21-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Feelings</h2>
+          <h2>Feelings <a class="mb-link" href="https://musicbrainz.org/release/c08d5ec6-81db-4bcc-9e54-6204909bd468" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 44209</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 195918759277</span>
-            <span><strong>Catalog #:</strong> DEZ-21-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 44209</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 195918759277</span>
+            <span><strong>Cat#</strong> DEZ-21-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -1229,19 +1528,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Feelings">
 <input type="hidden" name="mediums.0.track.0.length" value="0.124305556">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/384fc74a-1eec-4134-8cf4-0e75e0ad5f3b" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/c08d5ec6-81db-4bcc-9e54-6204909bd468" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/384fc74a-1eec-4134-8cf4-0e75e0ad5f3b" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/c08d5ec6-81db-4bcc-9e54-6204909bd468" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -1321,7 +1622,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -1346,13 +1647,14 @@
 <section id="dezolent-outside-dez-21-0002-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Outside</h2>
+          <h2>Outside <a class="mb-link" href="https://musicbrainz.org/release/6721d30e-7dce-48cd-8c08-9c7dc4379a4f" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 44237</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 195919678263</span>
-            <span><strong>Catalog #:</strong> DEZ-21-0002-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 44237</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 195919678263</span>
+            <span><strong>Cat#</strong> DEZ-21-0002-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -1372,19 +1674,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Outside">
 <input type="hidden" name="mediums.0.track.0.length" value="0.139583333">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/edd3f38c-c479-4775-b297-40d68dfb2276" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/6721d30e-7dce-48cd-8c08-9c7dc4379a4f" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/edd3f38c-c479-4775-b297-40d68dfb2276" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/6721d30e-7dce-48cd-8c08-9c7dc4379a4f" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -1464,7 +1768,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -1489,13 +1793,14 @@
 <section id="dezolent-spaced-out-dez-24-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Spaced Out</h2>
+          <h2>Spaced Out <a class="mb-link" href="https://musicbrainz.org/release/51956829-eeb0-4097-999b-771b96f77d14" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 2024-02-12</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 19771773303</span>
-            <span><strong>Catalog #:</strong> DEZ-24-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 2024-02-12</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 19771773303</span>
+            <span><strong>Cat#</strong> DEZ-24-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -1518,19 +1823,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Spaced Out">
 <input type="hidden" name="mediums.0.track.0.length" value="2:57">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/1396ff49-c33b-4c49-adcc-f0ca75207f80" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/51956829-eeb0-4097-999b-771b96f77d14" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/1396ff49-c33b-4c49-adcc-f0ca75207f80" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/51956829-eeb0-4097-999b-771b96f77d14" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -1622,7 +1929,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -1647,13 +1954,14 @@
 <section id="dezolent-desolation-dez-24-0002-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Desolation</h2>
+          <h2>Desolation <a class="mb-link" href="https://musicbrainz.org/release/e9f206b6-3d63-4519-b794-7d9d27078fa1" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 45630</span>
-            <span><strong>Tracks:</strong> 6</span>
-            <span><strong>UPC:</strong> 674053159192</span>
-            <span><strong>Catalog #:</strong> DEZ-24-0002-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 45630</span>
+            <span><strong>Tracks</strong> 6</span>
+            <span><strong>UPC</strong> 674053159192</span>
+            <span><strong>Cat#</strong> DEZ-24-0002-W</span>
+            <span><strong>Type</strong> Album</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -1688,19 +1996,21 @@
 <input type="hidden" name="mediums.0.track.5.number" value="6">
 <input type="hidden" name="mediums.0.track.5.name" value="Save Me">
 <input type="hidden" name="mediums.0.track.5.length" value="0.157638889">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/9d4dc32a-8981-4272-8ac3-9a0b57899131" target="_blank" rel="noreferrer">Desolation</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/e9f206b6-3d63-4519-b794-7d9d27078fa1" target="_blank" rel="noreferrer">Desolation</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/9d4dc32a-8981-4272-8ac3-9a0b57899131" target="_blank" rel="noreferrer">Desolation</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/e9f206b6-3d63-4519-b794-7d9d27078fa1" target="_blank" rel="noreferrer">Desolation</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -1840,7 +2150,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -1855,7 +2165,7 @@
               <td>T3294662554</td>
               <td>Joseph Christian Hill</td>
               <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/3775e940-8b3e-4e45-86be-beea4c7334e0" target="_blank" rel="noreferrer">Escape</a> <small>(score 450)</small></span></td>
-              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/1ccac7c7-898a-42e6-9d08-b026b9a59346" target="_blank" rel="noreferrer">Escape</a> <small>(score 300)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/b7a0d60b-fcac-4f4e-bcd4-3f065e49833b" target="_blank" rel="noreferrer">Escape</a> <small>(score 300)</small></span></td>
               <td>20</td>
             </tr> <tr>
               <td>2</td>
@@ -1930,13 +2240,14 @@
 <section id="dezolent-never-say-too-much-dez-25-0004-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Never Say Too Much</h2>
+          <h2>Never Say Too Much <a class="mb-link" href="https://musicbrainz.org/release/988ded91-584c-4e66-93b0-120d176e06d5" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 45686</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 199093371743</span>
-            <span><strong>Catalog #:</strong> DEZ-25-0004-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 45686</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 199093371743</span>
+            <span><strong>Cat#</strong> DEZ-25-0004-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -1956,19 +2267,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Never Say Too Much">
 <input type="hidden" name="mediums.0.track.0.length" value="0.136111111">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/e7952e14-b85d-4a6e-819a-546ba5273f81" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/988ded91-584c-4e66-93b0-120d176e06d5" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/e7952e14-b85d-4a6e-819a-546ba5273f81" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/988ded91-584c-4e66-93b0-120d176e06d5" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -2048,7 +2361,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -2073,13 +2386,14 @@
 <section id="dezolent-sonder-dez-25-0006-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Sonder</h2>
+          <h2>Sonder <a class="mb-link" href="https://musicbrainz.org/release/055e24a0-5b31-4a25-9447-f6c9658a59a7" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 45848</span>
-            <span><strong>Tracks:</strong> 2</span>
-            <span><strong>UPC:</strong> 199348130811</span>
-            <span><strong>Catalog #:</strong> DEZ-25-0006-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 45848</span>
+            <span><strong>Tracks</strong> 2</span>
+            <span><strong>UPC</strong> 199348130811</span>
+            <span><strong>Cat#</strong> DEZ-25-0006-W</span>
+            <span><strong>Type</strong> Album</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -2102,19 +2416,21 @@
 <input type="hidden" name="mediums.0.track.1.number" value="2">
 <input type="hidden" name="mediums.0.track.1.name" value="Sonder Sped Up">
 <input type="hidden" name="mediums.0.track.1.length" value="0.084027778">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/94e251a3-6f70-4210-969b-c11a1002fe4d" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/055e24a0-5b31-4a25-9447-f6c9658a59a7" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/94e251a3-6f70-4210-969b-c11a1002fe4d" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/055e24a0-5b31-4a25-9447-f6c9658a59a7" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -2206,7 +2522,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>
@@ -2244,13 +2560,14 @@
 <section id="dezolent-gone-coptr-remix-dez-26-0001-w" class="release-card">
       <div class="release-head">
         <div>
-          <h2>Gone (Coptr Remix)</h2>
+          <h2>Gone (Coptr Remix) <a class="mb-link" href="https://musicbrainz.org/release/bfa5f6a7-6ea4-40a7-a7ba-5793e0965f59" target="_blank" rel="noreferrer">&#9654; Open on MusicBrainz</a></h2>
           <div class="meta">
-            <span><strong>Release artist:</strong> Dezolent</span>
-            <span><strong>Date:</strong> 2026-03-25</span>
-            <span><strong>Tracks:</strong> 1</span>
-            <span><strong>UPC:</strong> 821317019796</span>
-            <span><strong>Catalog #:</strong> DEZ-26-0001-W</span>
+            <span><strong>Artist</strong> Dezolent</span>
+            <span><strong>Date</strong> 2026-03-25</span>
+            <span><strong>Tracks</strong> 1</span>
+            <span><strong>UPC</strong> 821317019796</span>
+            <span><strong>Cat#</strong> DEZ-26-0001-W</span>
+            <span><strong>Type</strong> Single</span>
           </div>
         </div>
         <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
@@ -2273,19 +2590,21 @@
 <input type="hidden" name="mediums.0.track.0.number" value="1">
 <input type="hidden" name="mediums.0.track.0.name" value="Gone - Coptr Remix">
 <input type="hidden" name="mediums.0.track.0.length" value="2:51">
-          <button type="submit">Seed release editor</button>
+          <button type="submit">&#43; Seed release editor</button>
         </form>
       </div>
 
+      <hr class="section-divider">
+
       <div class="lookup-grid">
-        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
-        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/9e5c29d5-a290-4b50-a86a-9fa74034ee79" target="_blank" rel="noreferrer">Gone (Coptr Remix)</a> <small>(score 330)</small></span>
-        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/bfa5f6a7-6ea4-40a7-a7ba-5793e0965f59" target="_blank" rel="noreferrer">Gone (Coptr Remix)</a> <small>(score 330)</small></span>
+        <span class="hit ok">Found Artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found Release Group: <a href="https://musicbrainz.org/release-group/9e5c29d5-a290-4b50-a86a-9fa74034ee79" target="_blank" rel="noreferrer">Gone (Coptr Remix)</a> <small>(score 330)</small></span>
+        <span class="hit ok">Found Release: <a href="https://musicbrainz.org/release/bfa5f6a7-6ea4-40a7-a7ba-5793e0965f59" target="_blank" rel="noreferrer">Gone (Coptr Remix)</a> <small>(score 330)</small></span>
       </div>
 
       <details>
-        <summary>Release seeding fields</summary>
+        <summary>&#9654; Seeding fields (debug)</summary>
         <pre>[
   [
     &quot;name&quot;,
@@ -2377,7 +2696,7 @@
             <th>Writer(s)</th>
             <th>Recording</th>
             <th>Work</th>
-            <th>CSV row</th>
+            <th>Row</th>
           </tr>
         </thead>
         <tbody>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T21:24:24.321786Z",
+  "generated_at": "2026-04-08T22:54:35.026838Z",
   "releases": [
     {
       "title": "It's Dezolent",
@@ -936,10 +936,10 @@
             }
           },
           "existing_work": {
-            "mbid": "1ccac7c7-898a-42e6-9d08-b026b9a59346",
+            "mbid": "b7a0d60b-fcac-4f4e-bcd4-3f065e49833b",
             "name": "Escape",
             "score": 300,
-            "url": "https://musicbrainz.org/work/1ccac7c7-898a-42e6-9d08-b026b9a59346",
+            "url": "https://musicbrainz.org/work/b7a0d60b-fcac-4f4e-bcd4-3f065e49833b",
             "extra": {}
           }
         },
