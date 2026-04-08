@@ -1,0 +1,1346 @@
+{
+  "generated_at": "2026-04-08T21:24:24.321786Z",
+  "releases": [
+    {
+      "title": "It's Dezolent",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "3/5/13",
+      "release_date_iso": "2013-03-05",
+      "year": "2013",
+      "upc": "886296197774",
+      "catalog_number": "DEZ-13-0001-W",
+      "status": "official",
+      "primary_type": "Album",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "e14f83cc-08fd-4998-8c18-90cad794c855",
+        "name": "It's Dezolent",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/e14f83cc-08fd-4998-8c18-90cad794c855",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "f2fd1209-9330-44c4-8b9a-676a0df6fd68",
+        "name": "It's Dezolent",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/f2fd1209-9330-44c4-8b9a-676a0df6fd68",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Descent",
+          "artist": "Dezolent",
+          "duration_raw": "3:20",
+          "duration_mmss": "3:20",
+          "duration_ms": 200000,
+          "isrc": "USJ3V1232957",
+          "iswc": "T3294821679",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 2,
+          "existing_recording": {
+            "mbid": "91c3e18b-38c7-4c3f-8ca4-73d558e71535",
+            "name": "Descent",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/91c3e18b-38c7-4c3f-8ca4-73d558e71535",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "7e13fc25-48da-4075-b172-93a0a38929cd",
+            "name": "Descent",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/7e13fc25-48da-4075-b172-93a0a38929cd",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Recrudescence",
+          "artist": "Dezolent",
+          "duration_raw": "3:20",
+          "duration_mmss": "3:20",
+          "duration_ms": 200000,
+          "isrc": "USJ3V1232961",
+          "iswc": "T3294821577",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 3,
+          "existing_recording": {
+            "mbid": "d70a1f8a-1ebb-4ff7-87d6-71910b3a5d3a",
+            "name": "Recrudescence",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/d70a1f8a-1ebb-4ff7-87d6-71910b3a5d3a",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "cd74b4f3-8c8c-425a-931c-067d76f5f417",
+            "name": "Recrudescence",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/cd74b4f3-8c8c-425a-931c-067d76f5f417",
+            "extra": {}
+          }
+        },
+        {
+          "title": "It's Dezolent",
+          "artist": "Dezolent",
+          "duration_raw": "2:40",
+          "duration_mmss": "2:40",
+          "duration_ms": 160000,
+          "isrc": "USJ3V1232959",
+          "iswc": "T3294821613",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 4,
+          "existing_recording": {
+            "mbid": "a2c15675-890f-4e0b-b6c6-7e68994f593d",
+            "name": "It's Dezolent",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/a2c15675-890f-4e0b-b6c6-7e68994f593d",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "a90e6276-ba61-47a5-8a9d-73f52283443e",
+            "name": "It's Dezolent",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/a90e6276-ba61-47a5-8a9d-73f52283443e",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Reckoning",
+          "artist": "Dezolent",
+          "duration_raw": "3:04",
+          "duration_mmss": "3:04",
+          "duration_ms": 184000,
+          "isrc": "USJ3V1232960",
+          "iswc": "T3294828443",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 5,
+          "existing_recording": {
+            "mbid": "a0de0f91-ca89-4d75-8c01-81c42b622bfe",
+            "name": "Reckoning",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/a0de0f91-ca89-4d75-8c01-81c42b622bfe",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "389d0193-9dcb-49af-a629-669665d2e2f0",
+            "name": "Reckoning",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/389d0193-9dcb-49af-a629-669665d2e2f0",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Faded Memories",
+          "artist": "Dezolent",
+          "duration_raw": "4:18",
+          "duration_mmss": "4:18",
+          "duration_ms": 258000,
+          "isrc": "USJ3V1232958",
+          "iswc": "T3294828545",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 6,
+          "existing_recording": {
+            "mbid": "e5f44fe1-c754-4079-a84b-01c85d8dc350",
+            "name": "Faded Memories",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/e5f44fe1-c754-4079-a84b-01c85d8dc350",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "2cb6a0db-617f-4489-b024-f2bb9b7182a4",
+            "name": "Faded Memories",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/2cb6a0db-617f-4489-b024-f2bb9b7182a4",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Fallen Star",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "12/5/13",
+      "release_date_iso": "2013-12-05",
+      "year": "2013",
+      "upc": "085494414090",
+      "catalog_number": "DEZ-13-0002-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "01a18922-64a8-465b-85f7-4b8ebe364b3a",
+        "name": "Fallen Star",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/01a18922-64a8-465b-85f7-4b8ebe364b3a",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "dd7ba773-dffe-48ec-9dd5-ef058b19cead",
+        "name": "Fallen Star",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/dd7ba773-dffe-48ec-9dd5-ef058b19cead",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Fallen Star",
+          "artist": "Dezolent",
+          "duration_raw": "3:49",
+          "duration_mmss": "3:49",
+          "duration_ms": 229000,
+          "isrc": "QZFP52028764",
+          "iswc": "T3294665326",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 7,
+          "existing_recording": {
+            "mbid": "381a1744-b8e5-457f-b468-e9c0739ae348",
+            "name": "Fallen Star",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/381a1744-b8e5-457f-b468-e9c0739ae348",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "eb6d61af-b4c6-402b-8e04-79373dedc8af",
+            "name": "Fallen Star",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/eb6d61af-b4c6-402b-8e04-79373dedc8af",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Higher",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "41695",
+      "release_date_iso": "41695",
+      "year": "2014",
+      "upc": "085494582393",
+      "catalog_number": "DEZ-14-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "f5af82d3-25d0-4758-8292-181ff4c317b4",
+        "name": "Higher",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/f5af82d3-25d0-4758-8292-181ff4c317b4",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "a0c1166e-c055-41c0-885e-cee02548fdf6",
+        "name": "Higher",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/a0c1166e-c055-41c0-885e-cee02548fdf6",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Higher",
+          "artist": "Dezolent",
+          "duration_raw": "0.1625",
+          "duration_mmss": "0.1625",
+          "duration_ms": null,
+          "isrc": "QM42K2054080",
+          "iswc": "T3294665246",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 8,
+          "existing_recording": {
+            "mbid": "aa437bce-3586-4854-b68d-a90a498f5a3d",
+            "name": "Higher",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/aa437bce-3586-4854-b68d-a90a498f5a3d",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "d4cb5fde-c427-4b26-ad4a-5a978bd2cb8a",
+            "name": "Higher",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/d4cb5fde-c427-4b26-ad4a-5a978bd2cb8a",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Gone",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "9/24/14",
+      "release_date_iso": "2014-09-24",
+      "year": "2024",
+      "upc": "085494590619",
+      "catalog_number": "DEZ-14-0002-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": null,
+      "release_group_hit": {
+        "mbid": "4e5ea19c-8d60-4dc7-807b-dd301824f2d6",
+        "name": "Gone",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/4e5ea19c-8d60-4dc7-807b-dd301824f2d6",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Gone",
+          "artist": "Dezolent",
+          "duration_raw": "4:18",
+          "duration_mmss": "4:18",
+          "duration_ms": 258000,
+          "isrc": "GBKQU1591272",
+          "iswc": "T3294665304",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 9,
+          "existing_recording": {
+            "mbid": "7f9118b7-a59b-4662-864b-3b3fb7d61e01",
+            "name": "Gone",
+            "score": 330,
+            "url": "https://musicbrainz.org/recording/7f9118b7-a59b-4662-864b-3b3fb7d61e01",
+            "extra": {
+              "artist_credit": "Dezolentfeat.Mona Moua"
+            }
+          },
+          "existing_work": {
+            "mbid": "dedb5968-3645-4f64-a583-18ed6b4fcf7c",
+            "name": "Gone",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/dedb5968-3645-4f64-a583-18ed6b4fcf7c",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Last Seven Days",
+      "release_artist": "Dezolent",
+      "release_label": "The EDM Collective",
+      "release_date_raw": "43350",
+      "release_date_iso": "43350",
+      "year": "2018",
+      "upc": "5054283852547",
+      "catalog_number": "DEZ-18-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "1a588055-ffe2-4748-a7ee-dd1636414298",
+        "name": "The EDM Collective",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/1a588055-ffe2-4748-a7ee-dd1636414298",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "7915d218-455a-45c5-bc2f-b6620261d756",
+        "name": "Last Seven Days",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/7915d218-455a-45c5-bc2f-b6620261d756",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "921db733-4100-46c2-aaa0-70d0eb5b6a79",
+        "name": "Last Seven Days",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/921db733-4100-46c2-aaa0-70d0eb5b6a79",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Last Seven Days",
+          "artist": "Dezolent",
+          "duration_raw": "4:07",
+          "duration_mmss": "4:07",
+          "duration_ms": 247000,
+          "isrc": "GBKQU1994609",
+          "iswc": "T3294665155",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 11,
+          "existing_recording": {
+            "mbid": "4f948814-5b44-487a-81f2-6276495aa232",
+            "name": "Last Seven Days",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/4f948814-5b44-487a-81f2-6276495aa232",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "e63eae06-e587-4bec-84af-1d41f500e47b",
+            "name": "Last Seven Days",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/e63eae06-e587-4bec-84af-1d41f500e47b",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Introspection",
+      "release_artist": "Dezolent",
+      "release_label": "Revamped Recordings",
+      "release_date_raw": "43850",
+      "release_date_iso": "43850",
+      "year": "2020",
+      "upc": "5054284828282",
+      "catalog_number": "DEZ-20-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "2f03a059-f023-4f13-9ba7-d5f2be0930cf",
+        "name": "Revamped Recordings",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/2f03a059-f023-4f13-9ba7-d5f2be0930cf",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "91e8f6fe-008d-4ca7-b41a-2d58efd9b36b",
+        "name": "Introspection",
+        "score": 330,
+        "url": "https://musicbrainz.org/release/91e8f6fe-008d-4ca7-b41a-2d58efd9b36b",
+        "extra": {
+          "artist_credit": "Dezolentfeat.Rapzor"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "ad33f0f9-c857-44e6-8a59-c8d029c78f44",
+        "name": "Introspection",
+        "score": 330,
+        "url": "https://musicbrainz.org/release-group/ad33f0f9-c857-44e6-8a59-c8d029c78f44",
+        "extra": {
+          "artist_credit": "Dezolentfeat.Rapzor"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Introspection (feat. Rapzor)",
+          "artist": "Dezolent",
+          "duration_raw": "0.148611111",
+          "duration_mmss": "0.148611111",
+          "duration_ms": null,
+          "isrc": "GBKQU2003741",
+          "iswc": "T3294665177",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 12,
+          "existing_recording": {
+            "mbid": "ba0de60a-ca72-421c-a1c7-0e6d65254646",
+            "name": "Introspection",
+            "score": 130,
+            "url": "https://musicbrainz.org/recording/ba0de60a-ca72-421c-a1c7-0e6d65254646",
+            "extra": {
+              "artist_credit": "Dezolentfeat.Rapzor"
+            }
+          },
+          "existing_work": {
+            "mbid": "6392fe83-0714-4000-aff2-453a9da9baa0",
+            "name": "Introspection",
+            "score": 100,
+            "url": "https://musicbrainz.org/work/6392fe83-0714-4000-aff2-453a9da9baa0",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sleepless",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "44013",
+      "release_date_iso": "44013",
+      "year": "2020",
+      "upc": "195395500959",
+      "catalog_number": "DEZ-2025-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "93923e9b-c080-4368-ada1-0fa6119539f3",
+        "name": "Sleepless",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/93923e9b-c080-4368-ada1-0fa6119539f3",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "9dc2b1dd-d448-4ff8-afc8-8308e9b4a432",
+        "name": "Sleepless",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/9dc2b1dd-d448-4ff8-afc8-8308e9b4a432",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Sleepless",
+          "artist": "Dezolent",
+          "duration_raw": "0.155555556",
+          "duration_mmss": "0.155555556",
+          "duration_ms": null,
+          "isrc": "QZHN62032511",
+          "iswc": "T3294665166",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 13,
+          "existing_recording": {
+            "mbid": "781bc7df-6034-4495-8a04-d6b3b63df365",
+            "name": "Sleepless",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/781bc7df-6034-4495-8a04-d6b3b63df365",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "68bd32cc-9e66-4653-879d-15f01c4d0adc",
+            "name": "Sleepless",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/68bd32cc-9e66-4653-879d-15f01c4d0adc",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Feelings",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "44209",
+      "release_date_iso": "44209",
+      "year": "2020",
+      "upc": "195918759277",
+      "catalog_number": "DEZ-21-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "c08d5ec6-81db-4bcc-9e54-6204909bd468",
+        "name": "Feelings",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/c08d5ec6-81db-4bcc-9e54-6204909bd468",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "384fc74a-1eec-4134-8cf4-0e75e0ad5f3b",
+        "name": "Feelings",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/384fc74a-1eec-4134-8cf4-0e75e0ad5f3b",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Feelings",
+          "artist": "Dezolent",
+          "duration_raw": "0.124305556",
+          "duration_mmss": "0.124305556",
+          "duration_ms": null,
+          "isrc": "QZNWZ2073120",
+          "iswc": "T3294665199",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 14,
+          "existing_recording": {
+            "mbid": "723e08ce-38a7-4ec6-b674-6f271e0510e9",
+            "name": "Feelings",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/723e08ce-38a7-4ec6-b674-6f271e0510e9",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "2c6737e4-1e66-41f8-9f4d-eac7800e9ba9",
+            "name": "Feelings",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/2c6737e4-1e66-41f8-9f4d-eac7800e9ba9",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Outside",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "44237",
+      "release_date_iso": "44237",
+      "year": "2021",
+      "upc": "195919678263",
+      "catalog_number": "DEZ-21-0002-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "6721d30e-7dce-48cd-8c08-9c7dc4379a4f",
+        "name": "Outside",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/6721d30e-7dce-48cd-8c08-9c7dc4379a4f",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "edd3f38c-c479-4775-b297-40d68dfb2276",
+        "name": "Outside",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/edd3f38c-c479-4775-b297-40d68dfb2276",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Outside",
+          "artist": "Dezolent",
+          "duration_raw": "0.139583333",
+          "duration_mmss": "0.139583333",
+          "duration_ms": null,
+          "isrc": "QZFYY2145897",
+          "iswc": "T3294665111",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 15,
+          "existing_recording": {
+            "mbid": "df589404-ee03-4c47-8ad9-61ea58d24b0a",
+            "name": "Outside",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/df589404-ee03-4c47-8ad9-61ea58d24b0a",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "6732105c-a3d0-41e2-b9a8-b1ba4d72b75d",
+            "name": "Outside",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/6732105c-a3d0-41e2-b9a8-b1ba4d72b75d",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Spaced Out",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "2/12/24",
+      "release_date_iso": "2024-02-12",
+      "year": "2024",
+      "upc": "19771773303",
+      "catalog_number": "DEZ-24-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "51956829-eeb0-4097-999b-771b96f77d14",
+        "name": "Spaced Out",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/51956829-eeb0-4097-999b-771b96f77d14",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "1396ff49-c33b-4c49-adcc-f0ca75207f80",
+        "name": "Spaced Out",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/1396ff49-c33b-4c49-adcc-f0ca75207f80",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Spaced Out",
+          "artist": "Dezolent",
+          "duration_raw": "2:57",
+          "duration_mmss": "2:57",
+          "duration_ms": 177000,
+          "isrc": "QZWFQ2390492",
+          "iswc": "T3294831662",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 19,
+          "existing_recording": {
+            "mbid": "6e472afd-6498-47bc-bced-79224a86d165",
+            "name": "Spaced Out",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/6e472afd-6498-47bc-bced-79224a86d165",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "83058ec3-d68f-4680-84de-3a00b9382ad1",
+            "name": "Spaced Out",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/83058ec3-d68f-4680-84de-3a00b9382ad1",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Desolation",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "45630",
+      "release_date_iso": "45630",
+      "year": "2024",
+      "upc": "674053159192",
+      "catalog_number": "DEZ-24-0002-W",
+      "status": "official",
+      "primary_type": "Album",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "e9f206b6-3d63-4519-b794-7d9d27078fa1",
+        "name": "Desolation",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/e9f206b6-3d63-4519-b794-7d9d27078fa1",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "9d4dc32a-8981-4272-8ac3-9a0b57899131",
+        "name": "Desolation",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/9d4dc32a-8981-4272-8ac3-9a0b57899131",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Escape",
+          "artist": "Dezolent",
+          "duration_raw": "0.150694444",
+          "duration_mmss": "0.150694444",
+          "duration_ms": null,
+          "isrc": "QZMHL2429589",
+          "iswc": "T3294662554",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 20,
+          "existing_recording": {
+            "mbid": "3775e940-8b3e-4e45-86be-beea4c7334e0",
+            "name": "Escape",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/3775e940-8b3e-4e45-86be-beea4c7334e0",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "1ccac7c7-898a-42e6-9d08-b026b9a59346",
+            "name": "Escape",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/1ccac7c7-898a-42e6-9d08-b026b9a59346",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Open Your Eyes",
+          "artist": "Dezolent",
+          "duration_raw": "0.195138889",
+          "duration_mmss": "0.195138889",
+          "duration_ms": null,
+          "isrc": "QZS652430116",
+          "iswc": "T3294651977",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 21,
+          "existing_recording": {
+            "mbid": "f3f9665c-cea1-4c22-9f97-f694e0185da9",
+            "name": "Open Your Eyes",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/f3f9665c-cea1-4c22-9f97-f694e0185da9",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "8b04cc0f-cdd9-4d77-bc54-7af47e04bf8f",
+            "name": "Open Your Eyes",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/8b04cc0f-cdd9-4d77-bc54-7af47e04bf8f",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Try Hard",
+          "artist": "Dezolent",
+          "duration_raw": "0.155555556",
+          "duration_mmss": "0.155555556",
+          "duration_ms": null,
+          "isrc": "QZMHP2437857",
+          "iswc": "T3294651853",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 22,
+          "existing_recording": {
+            "mbid": "ea2c1661-aca7-4bf6-994d-b24ebf7a28ba",
+            "name": "Try Hard",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/ea2c1661-aca7-4bf6-994d-b24ebf7a28ba",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "ceac489d-7dfc-4578-b672-e8be42c306ac",
+            "name": "Try Hard",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/ceac489d-7dfc-4578-b672-e8be42c306ac",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Gone",
+          "artist": "Dezolent",
+          "duration_raw": "0.179166667",
+          "duration_mmss": "0.179166667",
+          "duration_ms": null,
+          "isrc": "GBKQU1591272",
+          "iswc": "T3294665304",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 23,
+          "existing_recording": {
+            "mbid": "7f9118b7-a59b-4662-864b-3b3fb7d61e01",
+            "name": "Gone",
+            "score": 330,
+            "url": "https://musicbrainz.org/recording/7f9118b7-a59b-4662-864b-3b3fb7d61e01",
+            "extra": {
+              "artist_credit": "Dezolentfeat.Mona Moua"
+            }
+          },
+          "existing_work": {
+            "mbid": "dedb5968-3645-4f64-a583-18ed6b4fcf7c",
+            "name": "Gone",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/dedb5968-3645-4f64-a583-18ed6b4fcf7c",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Let Me Handle It",
+          "artist": "Dezolent",
+          "duration_raw": "0.132638889",
+          "duration_mmss": "0.132638889",
+          "duration_ms": null,
+          "isrc": "QZS642419972",
+          "iswc": "T3294662292",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 24,
+          "existing_recording": {
+            "mbid": "507777a9-49bf-4f33-8d02-d51044dafdea",
+            "name": "Let Me Handle It",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/507777a9-49bf-4f33-8d02-d51044dafdea",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "b8033301-d541-4861-a5c5-5a1538d75d8a",
+            "name": "Let Me Handle It",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/b8033301-d541-4861-a5c5-5a1538d75d8a",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Save Me",
+          "artist": "Dezolent",
+          "duration_raw": "0.157638889",
+          "duration_mmss": "0.157638889",
+          "duration_ms": null,
+          "isrc": "QZS672447481",
+          "iswc": "T3294651820",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 25,
+          "existing_recording": {
+            "mbid": "d2984030-5a0e-4b04-82dd-97205c2cff5a",
+            "name": "Save Me",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/d2984030-5a0e-4b04-82dd-97205c2cff5a",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "f886da07-5649-4b10-a323-b18fe5fc70f7",
+            "name": "Save Me",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/f886da07-5649-4b10-a323-b18fe5fc70f7",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Never Say Too Much",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "45686",
+      "release_date_iso": "45686",
+      "year": "2025",
+      "upc": "199093371743",
+      "catalog_number": "DEZ-25-0004-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "988ded91-584c-4e66-93b0-120d176e06d5",
+        "name": "Never Say Too Much",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/988ded91-584c-4e66-93b0-120d176e06d5",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "e7952e14-b85d-4a6e-819a-546ba5273f81",
+        "name": "Never Say Too Much",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/e7952e14-b85d-4a6e-819a-546ba5273f81",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Never Say Too Much",
+          "artist": "Dezolent",
+          "duration_raw": "0.136111111",
+          "duration_mmss": "0.136111111",
+          "duration_ms": null,
+          "isrc": "QT3EZ2444194",
+          "iswc": "T3302952309",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 26,
+          "existing_recording": {
+            "mbid": "acdc1dab-59db-4a35-868d-0ec3024fe5b3",
+            "name": "Never Say Too Much",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/acdc1dab-59db-4a35-868d-0ec3024fe5b3",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "53998acb-8953-4287-af72-1209eb07a8e1",
+            "name": "Never Say Too Much",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/53998acb-8953-4287-af72-1209eb07a8e1",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sonder",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "45848",
+      "release_date_iso": "45848",
+      "year": "2025",
+      "upc": "199348130811",
+      "catalog_number": "DEZ-25-0006-W",
+      "status": "official",
+      "primary_type": "Album",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "055e24a0-5b31-4a25-9447-f6c9658a59a7",
+        "name": "Sonder",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/055e24a0-5b31-4a25-9447-f6c9658a59a7",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "94e251a3-6f70-4210-969b-c11a1002fe4d",
+        "name": "Sonder",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/94e251a3-6f70-4210-969b-c11a1002fe4d",
+        "extra": {
+          "artist_credit": "Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Sonder",
+          "artist": "Dezolent",
+          "duration_raw": "0.085416667",
+          "duration_mmss": "0.085416667",
+          "duration_ms": null,
+          "isrc": "QZS652532682",
+          "iswc": "T3335620010",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 29,
+          "existing_recording": {
+            "mbid": "50fa7a93-8228-466a-83fb-0b4c4fef058a",
+            "name": "Sonder",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/50fa7a93-8228-466a-83fb-0b4c4fef058a",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "da6d6085-c0c6-48bf-ae40-d131d9f1839a",
+            "name": "Sonder",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/da6d6085-c0c6-48bf-ae40-d131d9f1839a",
+            "extra": {}
+          }
+        },
+        {
+          "title": "Sonder Sped Up",
+          "artist": "Dezolent",
+          "duration_raw": "0.084027778",
+          "duration_mmss": "0.084027778",
+          "duration_ms": null,
+          "isrc": "QZHPJ2514940",
+          "iswc": "T3335620009",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 30,
+          "existing_recording": {
+            "mbid": "abf089ff-7f52-4b9b-91ac-bff8f0454650",
+            "name": "Sonder Sped Up",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/abf089ff-7f52-4b9b-91ac-bff8f0454650",
+            "extra": {
+              "artist_credit": "Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "fafb1068-fc91-486c-8683-a89da1738801",
+            "name": "Sonder (Sped Up)",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/fafb1068-fc91-486c-8683-a89da1738801",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Gone (Coptr Remix)",
+      "release_artist": "Dezolent",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "3/25/26",
+      "release_date_iso": "2026-03-25",
+      "year": "2026",
+      "upc": "821317019796",
+      "catalog_number": "DEZ-26-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 300,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "bfa5f6a7-6ea4-40a7-a7ba-5793e0965f59",
+        "name": "Gone (Coptr Remix)",
+        "score": 330,
+        "url": "https://musicbrainz.org/release/bfa5f6a7-6ea4-40a7-a7ba-5793e0965f59",
+        "extra": {
+          "artist_credit": "Dezolent&Coptr"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "9e5c29d5-a290-4b50-a86a-9fa74034ee79",
+        "name": "Gone (Coptr Remix)",
+        "score": 330,
+        "url": "https://musicbrainz.org/release-group/9e5c29d5-a290-4b50-a86a-9fa74034ee79",
+        "extra": {
+          "artist_credit": "Dezolent&Coptr"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Gone - Coptr Remix",
+          "artist": "Dezolent",
+          "duration_raw": "2:51",
+          "duration_mmss": "2:51",
+          "duration_ms": 171000,
+          "isrc": "QT6K52600001",
+          "iswc": "T3387417296",
+          "writer_composers": [
+            "Joseph Christian Hill",
+            "Paul Gerlach"
+          ],
+          "source_row_number": 32,
+          "existing_recording": {
+            "mbid": "2ebebd81-7051-4a66-abfb-7edac833b8de",
+            "name": "Gone - Coptr Remix",
+            "score": 330,
+            "url": "https://musicbrainz.org/recording/2ebebd81-7051-4a66-abfb-7edac833b8de",
+            "extra": {
+              "artist_credit": "Dezolent,Mona Moua, &Coptr"
+            }
+          },
+          "existing_work": null
+        }
+      ]
+    }
+  ]
+}
