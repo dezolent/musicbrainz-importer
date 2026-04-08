@@ -1,0 +1,2402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MusicBrainz Seeding Dashboard</title>
+  <style>
+    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 24px; color: #111827; background: #f8fafc; }
+    h1, h2 { margin: 0 0 8px; }
+    .top { background: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-radius: 14px; margin-bottom: 24px; }
+    .note { color: #374151; line-height: 1.55; }
+    .release-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; margin-bottom: 22px; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .release-head { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; }
+    .meta { display: flex; gap: 12px; flex-wrap: wrap; color: #374151; margin-top: 8px; }
+    .seed-form button { border: 0; background: #111827; color: white; padding: 12px 16px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+    .seed-form button:hover { opacity: .92; }
+    .lookup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin: 16px 0; }
+    .hit { display: block; padding: 10px 12px; border-radius: 10px; border: 1px solid #e5e7eb; background: #f9fafb; }
+    .hit.ok { background: #ecfdf5; border-color: #a7f3d0; }
+    .hit.warn { background: #fffbeb; border-color: #fde68a; }
+    a { color: #1d4ed8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    details { margin: 14px 0; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #0f172a; color: #e5e7eb; padding: 14px; border-radius: 10px; overflow: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+    th, td { text-align: left; vertical-align: top; padding: 10px 8px; border-top: 1px solid #e5e7eb; }
+    th { background: #f8fafc; }
+    code { background: #eef2ff; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <h1>MusicBrainz Seeding Dashboard</h1>
+    <p class="note">
+      Generated from <code>songs.csv</code> on 2026-04-08 21:24:24 UTC.<br>
+      Releases: <strong>14</strong> &nbsp; Tracks: <strong>24</strong><br>
+      Country seed: <strong>XW</strong> &nbsp; Language seed: <strong>eng</strong> &nbsp; Script seed: <strong>Latn</strong>
+    </p>
+    <p class="note">
+      Use the <strong>Seed release editor</strong> button for each release first. That will create the release and its track list in the official MusicBrainz editor.
+      Works still need manual review/creation and relationship linking after the release/recordings exist.
+    </p>
+  </div>
+
+  <section id="dezolent-it-s-dezolent-dez-13-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>It&#x27;s Dezolent</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 2013-03-05</span>
+            <span><strong>Tracks:</strong> 5</span>
+            <span><strong>UPC:</strong> 886296197774</span>
+            <span><strong>Catalog #:</strong> DEZ-13-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="It&#x27;s Dezolent">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Album">
+<input type="hidden" name="barcode" value="886296197774">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.date.year" value="2013">
+<input type="hidden" name="events.0.date.month" value="03">
+<input type="hidden" name="events.0.date.day" value="05">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-13-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Descent">
+<input type="hidden" name="mediums.0.track.0.length" value="3:20">
+<input type="hidden" name="mediums.0.track.1.number" value="2">
+<input type="hidden" name="mediums.0.track.1.name" value="Recrudescence">
+<input type="hidden" name="mediums.0.track.1.length" value="3:20">
+<input type="hidden" name="mediums.0.track.2.number" value="3">
+<input type="hidden" name="mediums.0.track.2.name" value="It&#x27;s Dezolent">
+<input type="hidden" name="mediums.0.track.2.length" value="2:40">
+<input type="hidden" name="mediums.0.track.3.number" value="4">
+<input type="hidden" name="mediums.0.track.3.name" value="Reckoning">
+<input type="hidden" name="mediums.0.track.3.length" value="3:04">
+<input type="hidden" name="mediums.0.track.4.number" value="5">
+<input type="hidden" name="mediums.0.track.4.name" value="Faded Memories">
+<input type="hidden" name="mediums.0.track.4.length" value="4:18">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/f2fd1209-9330-44c4-8b9a-676a0df6fd68" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/e14f83cc-08fd-4998-8c18-90cad794c855" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;It&#x27;s Dezolent&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Album&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;886296197774&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.date.year&quot;,
+    &quot;2013&quot;
+  ],
+  [
+    &quot;events.0.date.month&quot;,
+    &quot;03&quot;
+  ],
+  [
+    &quot;events.0.date.day&quot;,
+    &quot;05&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-13-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Descent&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;3:20&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.number&quot;,
+    &quot;2&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.name&quot;,
+    &quot;Recrudescence&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.length&quot;,
+    &quot;3:20&quot;
+  ],
+  [
+    &quot;mediums.0.track.2.number&quot;,
+    &quot;3&quot;
+  ],
+  [
+    &quot;mediums.0.track.2.name&quot;,
+    &quot;It&#x27;s Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.track.2.length&quot;,
+    &quot;2:40&quot;
+  ],
+  [
+    &quot;mediums.0.track.3.number&quot;,
+    &quot;4&quot;
+  ],
+  [
+    &quot;mediums.0.track.3.name&quot;,
+    &quot;Reckoning&quot;
+  ],
+  [
+    &quot;mediums.0.track.3.length&quot;,
+    &quot;3:04&quot;
+  ],
+  [
+    &quot;mediums.0.track.4.number&quot;,
+    &quot;5&quot;
+  ],
+  [
+    &quot;mediums.0.track.4.name&quot;,
+    &quot;Faded Memories&quot;
+  ],
+  [
+    &quot;mediums.0.track.4.length&quot;,
+    &quot;4:18&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Descent</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>3:20</td>
+              <td>USJ3V1232957</td>
+              <td>T3294821679</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/91c3e18b-38c7-4c3f-8ca4-73d558e71535" target="_blank" rel="noreferrer">Descent</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/7e13fc25-48da-4075-b172-93a0a38929cd" target="_blank" rel="noreferrer">Descent</a> <small>(score 300)</small></span></td>
+              <td>2</td>
+            </tr> <tr>
+              <td>2</td>
+              <td>
+                <strong>Recrudescence</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>3:20</td>
+              <td>USJ3V1232961</td>
+              <td>T3294821577</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/d70a1f8a-1ebb-4ff7-87d6-71910b3a5d3a" target="_blank" rel="noreferrer">Recrudescence</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/cd74b4f3-8c8c-425a-931c-067d76f5f417" target="_blank" rel="noreferrer">Recrudescence</a> <small>(score 300)</small></span></td>
+              <td>3</td>
+            </tr> <tr>
+              <td>3</td>
+              <td>
+                <strong>It&#x27;s Dezolent</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>2:40</td>
+              <td>USJ3V1232959</td>
+              <td>T3294821613</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/a2c15675-890f-4e0b-b6c6-7e68994f593d" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/a90e6276-ba61-47a5-8a9d-73f52283443e" target="_blank" rel="noreferrer">It&#x27;s Dezolent</a> <small>(score 300)</small></span></td>
+              <td>4</td>
+            </tr> <tr>
+              <td>4</td>
+              <td>
+                <strong>Reckoning</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>3:04</td>
+              <td>USJ3V1232960</td>
+              <td>T3294828443</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/a0de0f91-ca89-4d75-8c01-81c42b622bfe" target="_blank" rel="noreferrer">Reckoning</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/389d0193-9dcb-49af-a629-669665d2e2f0" target="_blank" rel="noreferrer">Reckoning</a> <small>(score 300)</small></span></td>
+              <td>5</td>
+            </tr> <tr>
+              <td>5</td>
+              <td>
+                <strong>Faded Memories</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>4:18</td>
+              <td>USJ3V1232958</td>
+              <td>T3294828545</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/e5f44fe1-c754-4079-a84b-01c85d8dc350" target="_blank" rel="noreferrer">Faded Memories</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/2cb6a0db-617f-4489-b024-f2bb9b7182a4" target="_blank" rel="noreferrer">Faded Memories</a> <small>(score 300)</small></span></td>
+              <td>6</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-fallen-star-dez-13-0002-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Fallen Star</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 2013-12-05</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 085494414090</span>
+            <span><strong>Catalog #:</strong> DEZ-13-0002-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Fallen Star">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="085494414090">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.date.year" value="2013">
+<input type="hidden" name="events.0.date.month" value="12">
+<input type="hidden" name="events.0.date.day" value="05">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-13-0002-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Fallen Star">
+<input type="hidden" name="mediums.0.track.0.length" value="3:49">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/dd7ba773-dffe-48ec-9dd5-ef058b19cead" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/01a18922-64a8-465b-85f7-4b8ebe364b3a" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Fallen Star&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;085494414090&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.date.year&quot;,
+    &quot;2013&quot;
+  ],
+  [
+    &quot;events.0.date.month&quot;,
+    &quot;12&quot;
+  ],
+  [
+    &quot;events.0.date.day&quot;,
+    &quot;05&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-13-0002-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Fallen Star&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;3:49&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Fallen Star</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>3:49</td>
+              <td>QZFP52028764</td>
+              <td>T3294665326</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/381a1744-b8e5-457f-b468-e9c0739ae348" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/eb6d61af-b4c6-402b-8e04-79373dedc8af" target="_blank" rel="noreferrer">Fallen Star</a> <small>(score 300)</small></span></td>
+              <td>7</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-higher-dez-14-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Higher</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 41695</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 085494582393</span>
+            <span><strong>Catalog #:</strong> DEZ-14-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Higher">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="085494582393">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-14-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Higher">
+<input type="hidden" name="mediums.0.track.0.length" value="0.1625">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/a0c1166e-c055-41c0-885e-cee02548fdf6" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/f5af82d3-25d0-4758-8292-181ff4c317b4" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Higher&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;085494582393&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-14-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Higher&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.1625&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Higher</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.1625</td>
+              <td>QM42K2054080</td>
+              <td>T3294665246</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/aa437bce-3586-4854-b68d-a90a498f5a3d" target="_blank" rel="noreferrer">Higher</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/d4cb5fde-c427-4b26-ad4a-5a978bd2cb8a" target="_blank" rel="noreferrer">Higher</a> <small>(score 300)</small></span></td>
+              <td>8</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-gone-dez-14-0002-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Gone</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 2014-09-24</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 085494590619</span>
+            <span><strong>Catalog #:</strong> DEZ-14-0002-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Gone">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="085494590619">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.date.year" value="2014">
+<input type="hidden" name="events.0.date.month" value="09">
+<input type="hidden" name="events.0.date.day" value="24">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-14-0002-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Gone">
+<input type="hidden" name="mediums.0.track.0.length" value="4:18">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/4e5ea19c-8d60-4dc7-807b-dd301824f2d6" target="_blank" rel="noreferrer">Gone</a> <small>(score 450)</small></span>
+        <span class="hit warn">No match for release (<a href="https://musicbrainz.org/search?query=release%3A%22Gone%22+AND+artist%3A%22Dezolent%22&amp;type=release&amp;method=indexed" target="_blank" rel="noreferrer">search</a>)</span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Gone&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;085494590619&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.date.year&quot;,
+    &quot;2014&quot;
+  ],
+  [
+    &quot;events.0.date.month&quot;,
+    &quot;09&quot;
+  ],
+  [
+    &quot;events.0.date.day&quot;,
+    &quot;24&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-14-0002-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Gone&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;4:18&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Gone</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>4:18</td>
+              <td>GBKQU1591272</td>
+              <td>T3294665304</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/7f9118b7-a59b-4662-864b-3b3fb7d61e01" target="_blank" rel="noreferrer">Gone</a> <small>(score 330)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/dedb5968-3645-4f64-a583-18ed6b4fcf7c" target="_blank" rel="noreferrer">Gone</a> <small>(score 300)</small></span></td>
+              <td>9</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-last-seven-days-dez-18-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Last Seven Days</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 43350</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 5054283852547</span>
+            <span><strong>Catalog #:</strong> DEZ-18-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Last Seven Days">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="5054283852547">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="1a588055-ffe2-4748-a7ee-dd1636414298">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-18-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Last Seven Days">
+<input type="hidden" name="mediums.0.track.0.length" value="4:07">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/1a588055-ffe2-4748-a7ee-dd1636414298" target="_blank" rel="noreferrer">The EDM Collective</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/921db733-4100-46c2-aaa0-70d0eb5b6a79" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/7915d218-455a-45c5-bc2f-b6620261d756" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Last Seven Days&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;5054283852547&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;1a588055-ffe2-4748-a7ee-dd1636414298&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-18-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Last Seven Days&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;4:07&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Last Seven Days</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>4:07</td>
+              <td>GBKQU1994609</td>
+              <td>T3294665155</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/4f948814-5b44-487a-81f2-6276495aa232" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/e63eae06-e587-4bec-84af-1d41f500e47b" target="_blank" rel="noreferrer">Last Seven Days</a> <small>(score 300)</small></span></td>
+              <td>11</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-introspection-dez-20-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Introspection</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 43850</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 5054284828282</span>
+            <span><strong>Catalog #:</strong> DEZ-20-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Introspection">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="5054284828282">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="2f03a059-f023-4f13-9ba7-d5f2be0930cf">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-20-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Introspection (feat. Rapzor)">
+<input type="hidden" name="mediums.0.track.0.length" value="0.148611111">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/2f03a059-f023-4f13-9ba7-d5f2be0930cf" target="_blank" rel="noreferrer">Revamped Recordings</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/ad33f0f9-c857-44e6-8a59-c8d029c78f44" target="_blank" rel="noreferrer">Introspection</a> <small>(score 330)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/91e8f6fe-008d-4ca7-b41a-2d58efd9b36b" target="_blank" rel="noreferrer">Introspection</a> <small>(score 330)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Introspection&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;5054284828282&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;2f03a059-f023-4f13-9ba7-d5f2be0930cf&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-20-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Introspection (feat. Rapzor)&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.148611111&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Introspection (feat. Rapzor)</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.148611111</td>
+              <td>GBKQU2003741</td>
+              <td>T3294665177</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/ba0de60a-ca72-421c-a1c7-0e6d65254646" target="_blank" rel="noreferrer">Introspection</a> <small>(score 130)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/6392fe83-0714-4000-aff2-453a9da9baa0" target="_blank" rel="noreferrer">Introspection</a> <small>(score 100)</small></span></td>
+              <td>12</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-sleepless-dez-2025-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Sleepless</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 44013</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 195395500959</span>
+            <span><strong>Catalog #:</strong> DEZ-2025-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Sleepless">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="195395500959">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-2025-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Sleepless">
+<input type="hidden" name="mediums.0.track.0.length" value="0.155555556">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/9dc2b1dd-d448-4ff8-afc8-8308e9b4a432" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/93923e9b-c080-4368-ada1-0fa6119539f3" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Sleepless&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;195395500959&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-2025-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Sleepless&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.155555556&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Sleepless</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.155555556</td>
+              <td>QZHN62032511</td>
+              <td>T3294665166</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/781bc7df-6034-4495-8a04-d6b3b63df365" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/68bd32cc-9e66-4653-879d-15f01c4d0adc" target="_blank" rel="noreferrer">Sleepless</a> <small>(score 300)</small></span></td>
+              <td>13</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-feelings-dez-21-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Feelings</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 44209</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 195918759277</span>
+            <span><strong>Catalog #:</strong> DEZ-21-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Feelings">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="195918759277">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-21-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Feelings">
+<input type="hidden" name="mediums.0.track.0.length" value="0.124305556">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/384fc74a-1eec-4134-8cf4-0e75e0ad5f3b" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/c08d5ec6-81db-4bcc-9e54-6204909bd468" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Feelings&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;195918759277&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-21-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Feelings&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.124305556&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Feelings</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.124305556</td>
+              <td>QZNWZ2073120</td>
+              <td>T3294665199</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/723e08ce-38a7-4ec6-b674-6f271e0510e9" target="_blank" rel="noreferrer">Feelings</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/2c6737e4-1e66-41f8-9f4d-eac7800e9ba9" target="_blank" rel="noreferrer">Feelings</a> <small>(score 300)</small></span></td>
+              <td>14</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-outside-dez-21-0002-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Outside</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 44237</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 195919678263</span>
+            <span><strong>Catalog #:</strong> DEZ-21-0002-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Outside">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="195919678263">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-21-0002-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Outside">
+<input type="hidden" name="mediums.0.track.0.length" value="0.139583333">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/edd3f38c-c479-4775-b297-40d68dfb2276" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/6721d30e-7dce-48cd-8c08-9c7dc4379a4f" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Outside&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;195919678263&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-21-0002-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Outside&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.139583333&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Outside</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.139583333</td>
+              <td>QZFYY2145897</td>
+              <td>T3294665111</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/df589404-ee03-4c47-8ad9-61ea58d24b0a" target="_blank" rel="noreferrer">Outside</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/6732105c-a3d0-41e2-b9a8-b1ba4d72b75d" target="_blank" rel="noreferrer">Outside</a> <small>(score 300)</small></span></td>
+              <td>15</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-spaced-out-dez-24-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Spaced Out</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 2024-02-12</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 19771773303</span>
+            <span><strong>Catalog #:</strong> DEZ-24-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Spaced Out">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="19771773303">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.date.year" value="2024">
+<input type="hidden" name="events.0.date.month" value="02">
+<input type="hidden" name="events.0.date.day" value="12">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-24-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Spaced Out">
+<input type="hidden" name="mediums.0.track.0.length" value="2:57">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/1396ff49-c33b-4c49-adcc-f0ca75207f80" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/51956829-eeb0-4097-999b-771b96f77d14" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Spaced Out&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;19771773303&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.date.year&quot;,
+    &quot;2024&quot;
+  ],
+  [
+    &quot;events.0.date.month&quot;,
+    &quot;02&quot;
+  ],
+  [
+    &quot;events.0.date.day&quot;,
+    &quot;12&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-24-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Spaced Out&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;2:57&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Spaced Out</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>2:57</td>
+              <td>QZWFQ2390492</td>
+              <td>T3294831662</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/6e472afd-6498-47bc-bced-79224a86d165" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/83058ec3-d68f-4680-84de-3a00b9382ad1" target="_blank" rel="noreferrer">Spaced Out</a> <small>(score 300)</small></span></td>
+              <td>19</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-desolation-dez-24-0002-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Desolation</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 45630</span>
+            <span><strong>Tracks:</strong> 6</span>
+            <span><strong>UPC:</strong> 674053159192</span>
+            <span><strong>Catalog #:</strong> DEZ-24-0002-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Desolation">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Album">
+<input type="hidden" name="barcode" value="674053159192">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-24-0002-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Escape">
+<input type="hidden" name="mediums.0.track.0.length" value="0.150694444">
+<input type="hidden" name="mediums.0.track.1.number" value="2">
+<input type="hidden" name="mediums.0.track.1.name" value="Open Your Eyes">
+<input type="hidden" name="mediums.0.track.1.length" value="0.195138889">
+<input type="hidden" name="mediums.0.track.2.number" value="3">
+<input type="hidden" name="mediums.0.track.2.name" value="Try Hard">
+<input type="hidden" name="mediums.0.track.2.length" value="0.155555556">
+<input type="hidden" name="mediums.0.track.3.number" value="4">
+<input type="hidden" name="mediums.0.track.3.name" value="Gone">
+<input type="hidden" name="mediums.0.track.3.length" value="0.179166667">
+<input type="hidden" name="mediums.0.track.4.number" value="5">
+<input type="hidden" name="mediums.0.track.4.name" value="Let Me Handle It">
+<input type="hidden" name="mediums.0.track.4.length" value="0.132638889">
+<input type="hidden" name="mediums.0.track.5.number" value="6">
+<input type="hidden" name="mediums.0.track.5.name" value="Save Me">
+<input type="hidden" name="mediums.0.track.5.length" value="0.157638889">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/9d4dc32a-8981-4272-8ac3-9a0b57899131" target="_blank" rel="noreferrer">Desolation</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/e9f206b6-3d63-4519-b794-7d9d27078fa1" target="_blank" rel="noreferrer">Desolation</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Desolation&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Album&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;674053159192&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-24-0002-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Escape&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.150694444&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.number&quot;,
+    &quot;2&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.name&quot;,
+    &quot;Open Your Eyes&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.length&quot;,
+    &quot;0.195138889&quot;
+  ],
+  [
+    &quot;mediums.0.track.2.number&quot;,
+    &quot;3&quot;
+  ],
+  [
+    &quot;mediums.0.track.2.name&quot;,
+    &quot;Try Hard&quot;
+  ],
+  [
+    &quot;mediums.0.track.2.length&quot;,
+    &quot;0.155555556&quot;
+  ],
+  [
+    &quot;mediums.0.track.3.number&quot;,
+    &quot;4&quot;
+  ],
+  [
+    &quot;mediums.0.track.3.name&quot;,
+    &quot;Gone&quot;
+  ],
+  [
+    &quot;mediums.0.track.3.length&quot;,
+    &quot;0.179166667&quot;
+  ],
+  [
+    &quot;mediums.0.track.4.number&quot;,
+    &quot;5&quot;
+  ],
+  [
+    &quot;mediums.0.track.4.name&quot;,
+    &quot;Let Me Handle It&quot;
+  ],
+  [
+    &quot;mediums.0.track.4.length&quot;,
+    &quot;0.132638889&quot;
+  ],
+  [
+    &quot;mediums.0.track.5.number&quot;,
+    &quot;6&quot;
+  ],
+  [
+    &quot;mediums.0.track.5.name&quot;,
+    &quot;Save Me&quot;
+  ],
+  [
+    &quot;mediums.0.track.5.length&quot;,
+    &quot;0.157638889&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Escape</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.150694444</td>
+              <td>QZMHL2429589</td>
+              <td>T3294662554</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/3775e940-8b3e-4e45-86be-beea4c7334e0" target="_blank" rel="noreferrer">Escape</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/1ccac7c7-898a-42e6-9d08-b026b9a59346" target="_blank" rel="noreferrer">Escape</a> <small>(score 300)</small></span></td>
+              <td>20</td>
+            </tr> <tr>
+              <td>2</td>
+              <td>
+                <strong>Open Your Eyes</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.195138889</td>
+              <td>QZS652430116</td>
+              <td>T3294651977</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/f3f9665c-cea1-4c22-9f97-f694e0185da9" target="_blank" rel="noreferrer">Open Your Eyes</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/8b04cc0f-cdd9-4d77-bc54-7af47e04bf8f" target="_blank" rel="noreferrer">Open Your Eyes</a> <small>(score 300)</small></span></td>
+              <td>21</td>
+            </tr> <tr>
+              <td>3</td>
+              <td>
+                <strong>Try Hard</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.155555556</td>
+              <td>QZMHP2437857</td>
+              <td>T3294651853</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/ea2c1661-aca7-4bf6-994d-b24ebf7a28ba" target="_blank" rel="noreferrer">Try Hard</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/ceac489d-7dfc-4578-b672-e8be42c306ac" target="_blank" rel="noreferrer">Try Hard</a> <small>(score 300)</small></span></td>
+              <td>22</td>
+            </tr> <tr>
+              <td>4</td>
+              <td>
+                <strong>Gone</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.179166667</td>
+              <td>GBKQU1591272</td>
+              <td>T3294665304</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/7f9118b7-a59b-4662-864b-3b3fb7d61e01" target="_blank" rel="noreferrer">Gone</a> <small>(score 330)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/dedb5968-3645-4f64-a583-18ed6b4fcf7c" target="_blank" rel="noreferrer">Gone</a> <small>(score 300)</small></span></td>
+              <td>23</td>
+            </tr> <tr>
+              <td>5</td>
+              <td>
+                <strong>Let Me Handle It</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.132638889</td>
+              <td>QZS642419972</td>
+              <td>T3294662292</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/507777a9-49bf-4f33-8d02-d51044dafdea" target="_blank" rel="noreferrer">Let Me Handle It</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/b8033301-d541-4861-a5c5-5a1538d75d8a" target="_blank" rel="noreferrer">Let Me Handle It</a> <small>(score 300)</small></span></td>
+              <td>24</td>
+            </tr> <tr>
+              <td>6</td>
+              <td>
+                <strong>Save Me</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.157638889</td>
+              <td>QZS672447481</td>
+              <td>T3294651820</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/d2984030-5a0e-4b04-82dd-97205c2cff5a" target="_blank" rel="noreferrer">Save Me</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/f886da07-5649-4b10-a323-b18fe5fc70f7" target="_blank" rel="noreferrer">Save Me</a> <small>(score 300)</small></span></td>
+              <td>25</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-never-say-too-much-dez-25-0004-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Never Say Too Much</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 45686</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 199093371743</span>
+            <span><strong>Catalog #:</strong> DEZ-25-0004-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Never Say Too Much">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="199093371743">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-25-0004-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Never Say Too Much">
+<input type="hidden" name="mediums.0.track.0.length" value="0.136111111">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/e7952e14-b85d-4a6e-819a-546ba5273f81" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/988ded91-584c-4e66-93b0-120d176e06d5" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Never Say Too Much&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;199093371743&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-25-0004-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Never Say Too Much&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.136111111&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Never Say Too Much</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.136111111</td>
+              <td>QT3EZ2444194</td>
+              <td>T3302952309</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/acdc1dab-59db-4a35-868d-0ec3024fe5b3" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/53998acb-8953-4287-af72-1209eb07a8e1" target="_blank" rel="noreferrer">Never Say Too Much</a> <small>(score 300)</small></span></td>
+              <td>26</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-sonder-dez-25-0006-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Sonder</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 45848</span>
+            <span><strong>Tracks:</strong> 2</span>
+            <span><strong>UPC:</strong> 199348130811</span>
+            <span><strong>Catalog #:</strong> DEZ-25-0006-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Sonder">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Album">
+<input type="hidden" name="barcode" value="199348130811">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-25-0006-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Sonder">
+<input type="hidden" name="mediums.0.track.0.length" value="0.085416667">
+<input type="hidden" name="mediums.0.track.1.number" value="2">
+<input type="hidden" name="mediums.0.track.1.name" value="Sonder Sped Up">
+<input type="hidden" name="mediums.0.track.1.length" value="0.084027778">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/94e251a3-6f70-4210-969b-c11a1002fe4d" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/055e24a0-5b31-4a25-9447-f6c9658a59a7" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Sonder&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Album&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;199348130811&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-25-0006-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Sonder&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;0.085416667&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.number&quot;,
+    &quot;2&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.name&quot;,
+    &quot;Sonder Sped Up&quot;
+  ],
+  [
+    &quot;mediums.0.track.1.length&quot;,
+    &quot;0.084027778&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Sonder</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.085416667</td>
+              <td>QZS652532682</td>
+              <td>T3335620010</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/50fa7a93-8228-466a-83fb-0b4c4fef058a" target="_blank" rel="noreferrer">Sonder</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/da6d6085-c0c6-48bf-ae40-d131d9f1839a" target="_blank" rel="noreferrer">Sonder</a> <small>(score 300)</small></span></td>
+              <td>29</td>
+            </tr> <tr>
+              <td>2</td>
+              <td>
+                <strong>Sonder Sped Up</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>0.084027778</td>
+              <td>QZHPJ2514940</td>
+              <td>T3335620009</td>
+              <td>Joseph Christian Hill</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/abf089ff-7f52-4b9b-91ac-bff8f0454650" target="_blank" rel="noreferrer">Sonder Sped Up</a> <small>(score 450)</small></span></td>
+              <td><span class="hit ok">Found work: <a href="https://musicbrainz.org/work/fafb1068-fc91-486c-8683-a89da1738801" target="_blank" rel="noreferrer">Sonder (Sped Up)</a> <small>(score 300)</small></span></td>
+              <td>30</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+
+<section id="dezolent-gone-coptr-remix-dez-26-0001-w" class="release-card">
+      <div class="release-head">
+        <div>
+          <h2>Gone (Coptr Remix)</h2>
+          <div class="meta">
+            <span><strong>Release artist:</strong> Dezolent</span>
+            <span><strong>Date:</strong> 2026-03-25</span>
+            <span><strong>Tracks:</strong> 1</span>
+            <span><strong>UPC:</strong> 821317019796</span>
+            <span><strong>Catalog #:</strong> DEZ-26-0001-W</span>
+          </div>
+        </div>
+        <form action="https://musicbrainz.org/release/add" method="post" enctype="multipart/form-data" target="_blank" class="seed-form">
+          <input type="hidden" name="name" value="Gone (Coptr Remix)">
+<input type="hidden" name="status" value="official">
+<input type="hidden" name="edit_note" value="Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.">
+<input type="hidden" name="type" value="Single">
+<input type="hidden" name="barcode" value="821317019796">
+<input type="hidden" name="language" value="eng">
+<input type="hidden" name="script" value="Latn">
+<input type="hidden" name="events.0.date.year" value="2026">
+<input type="hidden" name="events.0.date.month" value="03">
+<input type="hidden" name="events.0.date.day" value="25">
+<input type="hidden" name="events.0.country" value="XW">
+<input type="hidden" name="labels.0.mbid" value="0dea0f3e-d7f3-4319-9ee0-9003e819135e">
+<input type="hidden" name="labels.0.catalog_number" value="DEZ-26-0001-W">
+<input type="hidden" name="artist_credit.names.0.mbid" value="a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b">
+<input type="hidden" name="artist_credit.names.0.name" value="Dezolent">
+<input type="hidden" name="mediums.0.format" value="Digital Media">
+<input type="hidden" name="mediums.0.track.0.number" value="1">
+<input type="hidden" name="mediums.0.track.0.name" value="Gone - Coptr Remix">
+<input type="hidden" name="mediums.0.track.0.length" value="2:51">
+          <button type="submit">Seed release editor</button>
+        </form>
+      </div>
+
+      <div class="lookup-grid">
+        <span class="hit ok">Found artist: <a href="https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b" target="_blank" rel="noreferrer">Dezolent</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found label: <a href="https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e" target="_blank" rel="noreferrer">Dezolent, LLC</a> <small>(score 300)</small></span>
+        <span class="hit ok">Found release group: <a href="https://musicbrainz.org/release-group/9e5c29d5-a290-4b50-a86a-9fa74034ee79" target="_blank" rel="noreferrer">Gone (Coptr Remix)</a> <small>(score 330)</small></span>
+        <span class="hit ok">Found release: <a href="https://musicbrainz.org/release/bfa5f6a7-6ea4-40a7-a7ba-5793e0965f59" target="_blank" rel="noreferrer">Gone (Coptr Remix)</a> <small>(score 330)</small></span>
+      </div>
+
+      <details>
+        <summary>Release seeding fields</summary>
+        <pre>[
+  [
+    &quot;name&quot;,
+    &quot;Gone (Coptr Remix)&quot;
+  ],
+  [
+    &quot;status&quot;,
+    &quot;official&quot;
+  ],
+  [
+    &quot;edit_note&quot;,
+    &quot;Seeded from my internal release catalog CSV. Please verify label/imprint usage, work relationships, release grouping, and any existing duplicate entities before applying.&quot;
+  ],
+  [
+    &quot;type&quot;,
+    &quot;Single&quot;
+  ],
+  [
+    &quot;barcode&quot;,
+    &quot;821317019796&quot;
+  ],
+  [
+    &quot;language&quot;,
+    &quot;eng&quot;
+  ],
+  [
+    &quot;script&quot;,
+    &quot;Latn&quot;
+  ],
+  [
+    &quot;events.0.date.year&quot;,
+    &quot;2026&quot;
+  ],
+  [
+    &quot;events.0.date.month&quot;,
+    &quot;03&quot;
+  ],
+  [
+    &quot;events.0.date.day&quot;,
+    &quot;25&quot;
+  ],
+  [
+    &quot;events.0.country&quot;,
+    &quot;XW&quot;
+  ],
+  [
+    &quot;labels.0.mbid&quot;,
+    &quot;0dea0f3e-d7f3-4319-9ee0-9003e819135e&quot;
+  ],
+  [
+    &quot;labels.0.catalog_number&quot;,
+    &quot;DEZ-26-0001-W&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.mbid&quot;,
+    &quot;a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b&quot;
+  ],
+  [
+    &quot;artist_credit.names.0.name&quot;,
+    &quot;Dezolent&quot;
+  ],
+  [
+    &quot;mediums.0.format&quot;,
+    &quot;Digital Media&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.number&quot;,
+    &quot;1&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.name&quot;,
+    &quot;Gone - Coptr Remix&quot;
+  ],
+  [
+    &quot;mediums.0.track.0.length&quot;,
+    &quot;2:51&quot;
+  ]
+]</pre>
+      </details>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Track</th>
+            <th>Length</th>
+            <th>ISRC</th>
+            <th>ISWC</th>
+            <th>Writer(s)</th>
+            <th>Recording</th>
+            <th>Work</th>
+            <th>CSV row</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>1</td>
+              <td>
+                <strong>Gone - Coptr Remix</strong><br>
+                <small>Artist: Dezolent</small>
+              </td>
+              <td>2:51</td>
+              <td>QT6K52600001</td>
+              <td>T3387417296</td>
+              <td>Joseph Christian Hill, Paul Gerlach</td>
+              <td><span class="hit ok">Found recording: <a href="https://musicbrainz.org/recording/2ebebd81-7051-4a66-abfb-7edac833b8de" target="_blank" rel="noreferrer">Gone - Coptr Remix</a> <small>(score 330)</small></span></td>
+              <td><span class="hit warn">No match for work (<a href="https://musicbrainz.org/search?query=iswc%3A%22T-338.741.729-6%22&amp;type=work&amp;method=indexed" target="_blank" rel="noreferrer">search</a> | <a href="https://musicbrainz.org/work/create?edit-work.name=Gone+-+Coptr+Remix" target="_blank" rel="noreferrer">create</a>)</span></td>
+              <td>32</td>
+            </tr>
+        </tbody>
+      </table>
+    </section>
+</body>
+</html>
