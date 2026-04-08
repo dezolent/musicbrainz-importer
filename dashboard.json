@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T22:54:35.026838Z",
+  "generated_at": "2026-04-08T23:14:17.404453Z",
   "releases": [
     {
       "title": "It's Dezolent",
@@ -414,6 +414,82 @@
       ]
     },
     {
+      "title": "New",
+      "release_artist": "Koi & Dezolent",
+      "release_label": "Pineapple Grooves",
+      "release_date_raw": "11/20/17",
+      "release_date_iso": "2017-11-20",
+      "year": "2017",
+      "upc": "853565560171",
+      "catalog_number": "DEZ-17-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "3480ab03-eeb5-46f7-9fad-1ac2cbb62e57",
+        "name": "Pineapple Grooves",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/3480ab03-eeb5-46f7-9fad-1ac2cbb62e57",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "2a346435-cf3a-4f93-91b6-88a844edc482",
+        "name": "New",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/2a346435-cf3a-4f93-91b6-88a844edc482",
+        "extra": {
+          "artist_credit": "Koi&Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "a9ccb2c6-0ea7-4ca3-9fbc-9451881af29c",
+        "name": "New",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/a9ccb2c6-0ea7-4ca3-9fbc-9451881af29c",
+        "extra": {
+          "artist_credit": "Koi&Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "New",
+          "artist": "Koi & Dezolent",
+          "duration_raw": "3:16",
+          "duration_mmss": "3:16",
+          "duration_ms": 196000,
+          "isrc": "US83Z1792425",
+          "iswc": "T3353958422",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 10,
+          "existing_recording": {
+            "mbid": "c49497aa-ea82-438e-911b-dfcde1889e72",
+            "name": "New",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/c49497aa-ea82-438e-911b-dfcde1889e72",
+            "extra": {
+              "artist_credit": "Koi&Dezolent"
+            }
+          },
+          "existing_work": {
+            "mbid": "57dc1fb0-c271-4be4-8a8e-db58486f20cc",
+            "name": "New",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/57dc1fb0-c271-4be4-8a8e-db58486f20cc",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
       "title": "Last Seven Days",
       "release_artist": "Dezolent",
       "release_label": "The EDM Collective",
@@ -794,6 +870,234 @@
       ]
     },
     {
+      "title": "Break",
+      "release_artist": "Dezolent & Morbeato",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "5/19/21",
+      "release_date_iso": "2021-05-19",
+      "year": "2021",
+      "upc": "196164573426",
+      "catalog_number": "DEZ-21-0003-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "1871fdaf-bd2c-4474-903e-ca31ce07f5df",
+        "name": "Break",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/1871fdaf-bd2c-4474-903e-ca31ce07f5df",
+        "extra": {
+          "artist_credit": "Dezolent&Morbeato"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "e15ff2ec-1a77-4f88-9c02-4c2507b96014",
+        "name": "Break",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/e15ff2ec-1a77-4f88-9c02-4c2507b96014",
+        "extra": {
+          "artist_credit": "Dezolent&Morbeato"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Break",
+          "artist": "Dezolent & Morbeato",
+          "duration_raw": "4:05",
+          "duration_mmss": "4:05",
+          "duration_ms": 245000,
+          "isrc": "QZHN42132819",
+          "iswc": "T3294665348",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 16,
+          "existing_recording": {
+            "mbid": "4eb689d7-52a7-444e-be83-efc868aface5",
+            "name": "Break",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/4eb689d7-52a7-444e-be83-efc868aface5",
+            "extra": {
+              "artist_credit": "Dezolent&MORBEATO"
+            }
+          },
+          "existing_work": {
+            "mbid": "01d08351-f984-44a5-b5eb-c7834252fef9",
+            "name": "Break",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/01d08351-f984-44a5-b5eb-c7834252fef9",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Before The Storm",
+      "release_artist": "Dezolent & Lotis & Dante Levo",
+      "release_label": "Future Bass Records",
+      "release_date_raw": "44564",
+      "release_date_iso": "44564",
+      "year": "2021",
+      "upc": "5059962460754",
+      "catalog_number": "DEZ-22-0001-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "86b7164c-8eb1-4d20-9bfb-46f808170537",
+        "name": "Future Bass Records",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/86b7164c-8eb1-4d20-9bfb-46f808170537",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "70923d90-fc86-4f8d-b14d-284075f54a06",
+        "name": "Before The Storm",
+        "score": 300,
+        "url": "https://musicbrainz.org/release/70923d90-fc86-4f8d-b14d-284075f54a06",
+        "extra": {
+          "artist_credit": "Dante Levo&Dezolentfeat.Lotis."
+        }
+      },
+      "release_group_hit": {
+        "mbid": "f424a164-c215-4963-a5ad-986cf729d2f2",
+        "name": "Before The Storm",
+        "score": 300,
+        "url": "https://musicbrainz.org/release-group/f424a164-c215-4963-a5ad-986cf729d2f2",
+        "extra": {
+          "artist_credit": "Dante Levo&Dezolentfeat.Lotis."
+        }
+      },
+      "tracks": [
+        {
+          "title": "Before The Storm",
+          "artist": "Dezolent & Lotis & Dante Levo",
+          "duration_raw": "0.165277778",
+          "duration_mmss": "0.165277778",
+          "duration_ms": null,
+          "isrc": "QZS642175993",
+          "iswc": "",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 17,
+          "existing_recording": {
+            "mbid": "8ca2ca48-111b-4ad7-a1ad-0d543075d93d",
+            "name": "Before The Storm",
+            "score": 300,
+            "url": "https://musicbrainz.org/recording/8ca2ca48-111b-4ad7-a1ad-0d543075d93d",
+            "extra": {
+              "artist_credit": "Dante Levo&Dezolentfeat.Lotis."
+            }
+          },
+          "existing_work": {
+            "mbid": "63c28d4d-3d58-3edd-ad70-aebdd394d1c9",
+            "name": "Before the Storm",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/63c28d4d-3d58-3edd-ad70-aebdd394d1c9",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Find You",
+      "release_artist": "Dezolent & Bad Color",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "44706",
+      "release_date_iso": "44706",
+      "year": "2022",
+      "upc": "196832113916",
+      "catalog_number": "DEZ-22-0002-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "459a1472-1d76-4285-aec5-dcc4e3ac52ad",
+        "name": "Find You",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/459a1472-1d76-4285-aec5-dcc4e3ac52ad",
+        "extra": {
+          "artist_credit": "Dezolent&Bad Color"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "acc60add-7fa5-4070-a45e-bacc5a5b488e",
+        "name": "Find You",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/acc60add-7fa5-4070-a45e-bacc5a5b488e",
+        "extra": {
+          "artist_credit": "Dezolent&Bad Color"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Find You",
+          "artist": "Dezolent & Bad Color",
+          "duration_raw": "0.118055556",
+          "duration_mmss": "0.118055556",
+          "duration_ms": null,
+          "isrc": "QZHN62254336",
+          "iswc": "T3294665020",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 18,
+          "existing_recording": {
+            "mbid": "ed59d3b2-6f0c-4624-84fe-518f5d75c9fe",
+            "name": "Find You",
+            "score": 450,
+            "url": "https://musicbrainz.org/recording/ed59d3b2-6f0c-4624-84fe-518f5d75c9fe",
+            "extra": {
+              "artist_credit": "Dezolent&Bad Color"
+            }
+          },
+          "existing_work": {
+            "mbid": "0f90bd80-3c88-4463-9033-9c6f9d08b592",
+            "name": "Find You",
+            "score": 300,
+            "url": "https://musicbrainz.org/work/0f90bd80-3c88-4463-9033-9c6f9d08b592",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
       "title": "Spaced Out",
       "release_artist": "Dezolent",
       "release_label": "Dezolent, LLC",
@@ -936,10 +1240,10 @@
             }
           },
           "existing_work": {
-            "mbid": "b7a0d60b-fcac-4f4e-bcd4-3f065e49833b",
+            "mbid": "1ccac7c7-898a-42e6-9d08-b026b9a59346",
             "name": "Escape",
             "score": 300,
-            "url": "https://musicbrainz.org/work/b7a0d60b-fcac-4f4e-bcd4-3f065e49833b",
+            "url": "https://musicbrainz.org/work/1ccac7c7-898a-42e6-9d08-b026b9a59346",
             "extra": {}
           }
         },
@@ -1167,6 +1471,152 @@
       ]
     },
     {
+      "title": "Falling Apart",
+      "release_artist": "Dezolent & Tomentam",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "3/21/25",
+      "release_date_iso": "2025-03-21",
+      "year": "2025",
+      "upc": "199081492450",
+      "catalog_number": "DEZ-25-0003-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "93374a7c-9bd7-413d-b09b-355f3f673a69",
+        "name": "Falling Apart",
+        "score": 450,
+        "url": "https://musicbrainz.org/release/93374a7c-9bd7-413d-b09b-355f3f673a69",
+        "extra": {
+          "artist_credit": "Dezolent&Tomentam"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "0f256c8b-dd37-4ffa-af75-de4f84c366ad",
+        "name": "Falling Apart",
+        "score": 450,
+        "url": "https://musicbrainz.org/release-group/0f256c8b-dd37-4ffa-af75-de4f84c366ad",
+        "extra": {
+          "artist_credit": "Dezolent&Tomentam"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Falling Apart (feat. fendi mars)",
+          "artist": "Dezolent & Tomentam",
+          "duration_raw": "3:06",
+          "duration_mmss": "3:06",
+          "duration_ms": 186000,
+          "isrc": "QZHN32522304",
+          "iswc": "",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 27,
+          "existing_recording": {
+            "mbid": "ec2d8fc3-3e4d-426a-9871-726a6a8edc9b",
+            "name": "Falling Apart",
+            "score": 130,
+            "url": "https://musicbrainz.org/recording/ec2d8fc3-3e4d-426a-9871-726a6a8edc9b",
+            "extra": {
+              "artist_credit": "Dezolent&Tomentamfeat.fendi mars"
+            }
+          },
+          "existing_work": null
+        }
+      ]
+    },
+    {
+      "title": "Sunchaser",
+      "release_artist": "Dezolent & Tomentam",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "4/24/25",
+      "release_date_iso": "2025-04-24",
+      "year": "2025",
+      "upc": "199339216609",
+      "catalog_number": "DEZ-25-0005-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "6e6a6628-0d27-4076-af7a-d0ce84a1b139",
+        "name": "Sunchaser",
+        "score": 300,
+        "url": "https://musicbrainz.org/release/6e6a6628-0d27-4076-af7a-d0ce84a1b139",
+        "extra": {
+          "artist_credit": "Tomentam&Dezolent"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "e9e41222-a3be-4df9-8afd-2462e53ef4d9",
+        "name": "Sunchaser",
+        "score": 300,
+        "url": "https://musicbrainz.org/release-group/e9e41222-a3be-4df9-8afd-2462e53ef4d9",
+        "extra": {
+          "artist_credit": "Tomentam&Dezolent"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Sunchaser (feat. Fran Pitcher)",
+          "artist": "Dezolent & Tomentam",
+          "duration_raw": "3:06",
+          "duration_mmss": "3:06",
+          "duration_ms": 186000,
+          "isrc": "QZK6H2564185",
+          "iswc": "T3319901123",
+          "writer_composers": [
+            "Joseph Christian Hill"
+          ],
+          "source_row_number": 28,
+          "existing_recording": {
+            "mbid": "8cec09cb-1921-4045-9c01-4d8b9df8dca6",
+            "name": "Sunchaser",
+            "score": 100,
+            "url": "https://musicbrainz.org/recording/8cec09cb-1921-4045-9c01-4d8b9df8dca6",
+            "extra": {
+              "artist_credit": "Tomentam&Dezolentfeat.francistheconqueror"
+            }
+          },
+          "existing_work": {
+            "mbid": "73036c7a-e970-45d1-99b8-dd4f7151e4cf",
+            "name": "Sunchaser",
+            "score": 100,
+            "url": "https://musicbrainz.org/work/73036c7a-e970-45d1-99b8-dd4f7151e4cf",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
       "title": "Sonder",
       "release_artist": "Dezolent",
       "release_label": "Dezolent, LLC",
@@ -1266,6 +1716,84 @@
             "name": "Sonder (Sped Up)",
             "score": 300,
             "url": "https://musicbrainz.org/work/fafb1068-fc91-486c-8683-a89da1738801",
+            "extra": {}
+          }
+        }
+      ]
+    },
+    {
+      "title": "Lost Love",
+      "release_artist": "Dezolent & Coptr",
+      "release_label": "Dezolent, LLC",
+      "release_date_raw": "10/15/25",
+      "release_date_iso": "2025-10-15",
+      "year": "2025",
+      "upc": "199740603098",
+      "catalog_number": "DEZ-25-0002-W",
+      "status": "official",
+      "primary_type": "Single",
+      "medium_format": "Digital Media",
+      "artist_hit": {
+        "mbid": "a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "name": "Dezolent",
+        "score": 100,
+        "url": "https://musicbrainz.org/artist/a4cc3b9d-6798-46d8-ac69-feb1ac9f8a0b",
+        "extra": {}
+      },
+      "label_hit": {
+        "mbid": "0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "name": "Dezolent, LLC",
+        "score": 300,
+        "url": "https://musicbrainz.org/label/0dea0f3e-d7f3-4319-9ee0-9003e819135e",
+        "extra": {}
+      },
+      "release_hit": {
+        "mbid": "65128a50-de5f-4763-a084-65debed0659d",
+        "name": "Lost Love",
+        "score": 330,
+        "url": "https://musicbrainz.org/release/65128a50-de5f-4763-a084-65debed0659d",
+        "extra": {
+          "artist_credit": "Dezolent&Coptrfeat.Lillie Price Carter"
+        }
+      },
+      "release_group_hit": {
+        "mbid": "7f53e6a6-f67a-4ca8-8762-17b232585c1d",
+        "name": "Lost Love",
+        "score": 330,
+        "url": "https://musicbrainz.org/release-group/7f53e6a6-f67a-4ca8-8762-17b232585c1d",
+        "extra": {
+          "artist_credit": "Dezolent&Coptrfeat.Lillie Price Carter"
+        }
+      },
+      "tracks": [
+        {
+          "title": "Lost Love (feat. Lillie Price Carter)",
+          "artist": "Dezolent & Coptr",
+          "duration_raw": "3:47",
+          "duration_mmss": "3:47",
+          "duration_ms": 227000,
+          "isrc": "QT3F22541854",
+          "iswc": "T3357388257",
+          "writer_composers": [
+            "Joseph Christian Hill",
+            "Paul Gerlach",
+            "Lillie Price Carter"
+          ],
+          "source_row_number": 31,
+          "existing_recording": {
+            "mbid": "4bf7a134-61ad-42d9-bb68-c489ae7a9d9e",
+            "name": "Lost Love",
+            "score": 130,
+            "url": "https://musicbrainz.org/recording/4bf7a134-61ad-42d9-bb68-c489ae7a9d9e",
+            "extra": {
+              "artist_credit": "Dezolent&Coptrfeat.Lillie Price Carter"
+            }
+          },
+          "existing_work": {
+            "mbid": "3c52cb72-2e9c-42eb-88ef-3f7a9f79b22c",
+            "name": "Lost Love",
+            "score": 100,
+            "url": "https://musicbrainz.org/work/3c52cb72-2e9c-42eb-88ef-3f7a9f79b22c",
             "extra": {}
           }
         }

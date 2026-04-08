@@ -5,6 +5,7 @@ CSV reading, row grouping, and release plan construction.
 from __future__ import annotations
 
 import csv
+import sys
 from collections import OrderedDict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -31,7 +32,7 @@ def read_catalog(csv_path: Path, artist_filter: Optional[str] = None) -> List[Di
         for idx, row in enumerate(reader, start=2):  # header is row 1
             cleaned = {key: clean_value(value) for key, value in row.items()}
             cleaned["__row_number__"] = str(idx)
-            if artist_filter and normalize_text(cleaned.get("Artist", "")) != normalize_text(artist_filter):
+            if artist_filter and normalize_text(artist_filter) not in normalize_text(cleaned.get("Artist", "")):
                 continue
             rows.append(cleaned)
     return rows
@@ -69,6 +70,21 @@ def _infer_primary_type(track_count: int, multi_track_primary_type: str = "") ->
     return multi_track_primary_type
 
 
+def _query_artist(full_artist: str, artist_filter: Optional[str]) -> str:
+    """Return the best single-artist name to use in MusicBrainz search queries.
+
+    MusicBrainz Lucene queries don't handle multi-artist strings like
+    'Dezolent & Tomentam' well — the & is treated as a query operator and
+    the compound name won't match a single artist index entry.
+
+    When the full artist is a collaboration that contains the CLI filter
+    artist, use the filter artist alone as the search term instead.
+    """
+    if artist_filter and normalize_text(artist_filter) in normalize_text(full_artist):
+        return artist_filter
+    return full_artist
+
+
 def build_release_plans(
         grouped_rows: OrderedDict[Tuple[str, ...], List[Dict[str, str]]],
         mb: MusicBrainzClient,
@@ -76,10 +92,14 @@ def build_release_plans(
         status: str,
         medium_format: str,
         multi_track_primary_type: str,
+        artist_filter: Optional[str] = None,
 ) -> List[ReleasePlan]:
     plans: List[ReleasePlan] = []
     artist_cache: Dict[str, Optional[object]] = {}
     label_cache: Dict[str, Optional[object]] = {}
+
+    total_tracks = sum(len(rows) for rows in grouped_rows.values())
+    track_index = 0
 
     for (_, _, _, _, _, _), release_rows in grouped_rows.items():
         first = release_rows[0]
@@ -91,8 +111,12 @@ def build_release_plans(
         release_date_iso, _ = parse_release_date(first.get("Release Date", ""))
         year = clean_value(first.get("Year"))
 
+        print(f"\nRelease: {release_artist} – {release_title}", file=sys.stderr)
+
+        search_artist = _query_artist(release_artist, artist_filter)
+
         if release_artist not in artist_cache:
-            results = mb.search("artist", f'artist:"{release_artist}"', limit=lookup_limit) if release_artist else []
+            results = mb.search("artist", f'artist:"{search_artist}"', limit=lookup_limit) if search_artist else []
             artist_cache[release_artist] = pick_best_hit("artist", results, expected_name=release_artist)
         artist_hit = artist_cache[release_artist]
 
@@ -105,14 +129,14 @@ def build_release_plans(
             release_results = mb.search("release", f"barcode:{upc}", limit=lookup_limit)
         else:
             q = f'release:"{release_title}"'
-            if release_artist:
-                q += f' AND artist:"{release_artist}"'
+            if search_artist:
+                q += f' AND artist:"{search_artist}"'
             release_results = mb.search("release", q, limit=lookup_limit)
         release_hit = pick_best_hit("release", release_results, expected_name=release_title, expected_artist=release_artist)
 
         rg_query = f'releasegroup:"{release_title}"'
-        if release_artist:
-            rg_query += f' AND artist:"{release_artist}"'
+        if search_artist:
+            rg_query += f' AND artist:"{search_artist}"'
         rg_results = mb.search("release-group", rg_query, limit=lookup_limit)
         release_group_hit = pick_best_hit("release-group", rg_results, expected_name=release_title, expected_artist=release_artist)
 
@@ -125,12 +149,14 @@ def build_release_plans(
             iswc = clean_value(track_row.get("ISWC"))
             writers = _collect_writer_composers(track_row)
 
+            search_track_artist = _query_artist(artist, artist_filter)
+
             if isrc:
                 recording_results = mb.search("recording", f"isrc:{isrc}", limit=lookup_limit)
             else:
                 q = f'recording:"{title}"'
-                if artist:
-                    q += f' AND artist:"{artist}"'
+                if search_track_artist:
+                    q += f' AND artist:"{search_track_artist}"'
                 recording_results = mb.search("recording", q, limit=lookup_limit)
             recording_hit = pick_best_hit("recording", recording_results, expected_name=title, expected_artist=artist)
 
@@ -140,6 +166,11 @@ def build_release_plans(
                 if work_results:
                     break
             work_hit = pick_best_hit("work", work_results, expected_name=title)
+
+            track_index += 1
+            rec_status = "recording: ✅" if recording_hit else "recording: ❌"
+            work_status = "work: ✅" if work_hit else "work: ❌"
+            print(f"  [{track_index:>{len(str(total_tracks))}}/{total_tracks}] {artist} – {title}  |  {rec_status}  |  {work_status}", file=sys.stderr)
 
             tracks.append(TrackPlan(
                 title=title,

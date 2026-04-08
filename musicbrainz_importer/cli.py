@@ -114,6 +114,7 @@ def main() -> int:
         status=args.status,
         medium_format=args.medium_format,
         multi_track_primary_type=args.multi_track_primary_type,
+        artist_filter=args.artist,
     )
 
     html_output = render_html_dashboard(
