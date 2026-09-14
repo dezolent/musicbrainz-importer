@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{TITLE}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>{{STYLES}}</style>
+</head>
+<body>
+  <a class="skip" href="#releases">Skip to releases</a>
+  <header class="masthead" id="masthead"></header>
+  <main>
+    <section class="kpis" id="kpis" aria-label="Summary"></section>
+    <section class="matrix-wrap" aria-labelledby="matrix-title">
+      <div class="section-head">
+        <h2 id="matrix-title">Coverage</h2>
+        <p class="section-sub">One row per release in chronological order. Each cell is one thing that must exist in MusicBrainz before the catalog is complete. Select a row to open its release.</p>
+      </div>
+      <div class="matrix" id="matrix" role="grid"></div>
+      <div class="legend" id="legend"></div>
+    </section>
+    <section class="toolbar" id="toolbar" aria-label="Filter releases"></section>
+    <section class="releases" id="releases" aria-live="polite"></section>
+  </main>
+  <footer class="foot" id="foot"></footer>
+  <script id="dashboard-data" type="application/json">{{DATA}}</script>
+  <script>{{SCRIPT}}</script>
+</body>
+</html>

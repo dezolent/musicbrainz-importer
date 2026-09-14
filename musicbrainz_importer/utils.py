@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import html
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import quote_plus
 
@@ -73,16 +73,22 @@ def parse_release_date(value: str) -> Tuple[str, Dict[str, str]]:
     if not raw:
         return "", {"year": "", "month": "", "day": ""}
 
-    for fmt in ("%m/%d/%y", "%m/%d/%Y", "%Y-%m-%d"):
+    def _parts(dt: datetime) -> Tuple[str, Dict[str, str]]:
+        return dt.strftime("%Y-%m-%d"), {
+            "year": f"{dt.year:04d}",
+            "month": f"{dt.month:02d}",
+            "day": f"{dt.day:02d}",
+        }
+
+    for fmt in ("%m/%d/%y", "%m/%d/%Y", "%Y-%m-%d", "%Y-%m-%dT%H:%M:%SZ"):
         try:
-            dt = datetime.strptime(raw, fmt)
-            return dt.strftime("%Y-%m-%d"), {
-                "year": f"{dt.year:04d}",
-                "month": f"{dt.month:02d}",
-                "day": f"{dt.day:02d}",
-            }
+            return _parts(datetime.strptime(raw, fmt))
         except ValueError:
             continue
+
+    # Spreadsheet serial date (days since 1899-12-30), e.g. "41695" -> 2014-02-25.
+    if re.fullmatch(r"\d{5}", raw) and 20000 <= int(raw) <= 80000:
+        return _parts(datetime(1899, 12, 30) + timedelta(days=int(raw)))
 
     return raw, {"year": "", "month": "", "day": ""}
 
@@ -100,12 +106,11 @@ def parse_duration(value: str) -> Tuple[str, Optional[int]]:
         total_seconds = hours * 3600 + minutes * 60 + seconds
         return f"{total_seconds // 60}:{total_seconds % 60:02d}", total_seconds * 1000
 
-    match = re.fullmatch(r"(\d{1,2}):(\d{2})", raw)
+    # Spreadsheet fraction-of-a-day: "3:54" typed as m:ss is stored as 3h54m = 0.1625 days.
+    match = re.fullmatch(r"0?\.\d+", raw)
     if match:
-        minutes = int(match.group(1))
-        seconds = int(match.group(2))
-        total_seconds = minutes * 60 + seconds
-        return f"{minutes}:{seconds:02d}", total_seconds * 1000
+        total_seconds = int(round(float(raw) * 24 * 60))  # hours->minutes, minutes->seconds
+        return f"{total_seconds // 60}:{total_seconds % 60:02d}", total_seconds * 1000
 
     return raw, None
 
